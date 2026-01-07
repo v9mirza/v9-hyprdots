@@ -5,3 +5,4 @@ wireplumber
 xdg-utils
 xdg-user-dirs
 polkit-gnome
+rsync
