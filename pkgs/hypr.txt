@@ -1,0 +1,9 @@
+hyprland
+waybar
+wofi
+hyprpaper
+grim
+slurp
+wl-clipboard
+brightnessctl
+pamixer

@@ -1,0 +1,7 @@
+kitty
+firefox
+thunar
+file-roller
+pavucontrol
+dunst
+libnotify
