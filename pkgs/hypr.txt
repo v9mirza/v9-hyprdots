@@ -2,8 +2,12 @@ hyprland
 waybar
 wofi
 hyprpaper
+hyprlock
+hypridle
 grim
 slurp
 wl-clipboard
+cliphist
 brightnessctl
 pamixer
+ttf-jetbrains-mono-nerd-font
