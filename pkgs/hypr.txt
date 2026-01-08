@@ -10,4 +10,3 @@ wl-clipboard
 cliphist
 brightnessctl
 pamixer
-ttf-jetbrains-mono-nerd-font

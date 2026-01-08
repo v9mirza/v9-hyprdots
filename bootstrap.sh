@@ -1,113 +1,56 @@
 #!/bin/bash
-# v9-hyprdots bootstrap script
-# Sets up a minimal, reproducible Hyprland environment
-# DM-agnostic, TTY-safe, idempotent
+# v9-hyprdots bootstrap (clean & deterministic)
 
 set -euo pipefail
 
 echo "== v9-hyprdots bootstrap =="
 
-# -------------------------------------------------
-# Sanity checks
-# -------------------------------------------------
+# Arch only
+[[ -f /etc/arch-release ]] || { echo "Arch Linux only."; exit 1; }
 
-# Arch Linux only
-if [[ ! -f /etc/arch-release ]]; then
-  echo "Error: This script is intended for Arch Linux only."
-  exit 1
-fi
-
-# Internet connectivity
-if ! ping -c 1 archlinux.org >/dev/null 2>&1; then
-  echo "Error: Network unavailable. Check connectivity."
-  exit 1
-fi
-
-# -------------------------------------------------
-# System update
-# -------------------------------------------------
-
-echo "-> Updating archlinux-keyring..."
-sudo pacman -S --noconfirm archlinux-keyring
-
-echo "-> Updating system..."
-sudo pacman -Syu --noconfirm
-
-# -------------------------------------------------
-# Package installation
-# -------------------------------------------------
-
-echo "-> Installing packages..."
-if compgen -G "pkgs/*.txt" > /dev/null; then
-  for pkg_list in pkgs/*.txt; do
-    echo "Installing packages from $pkg_list..."
-    sudo pacman -S --needed --noconfirm - < "$pkg_list"
-  done
-else
-  echo "Warning: No package lists found in pkgs/"
-fi
-
-# -------------------------------------------------
-# NetworkManager
-# -------------------------------------------------
-
-if ! systemctl is-enabled NetworkManager >/dev/null 2>&1; then
-  echo "-> Enabling NetworkManager..."
-  sudo systemctl enable --now NetworkManager
-fi
-
-# -------------------------------------------------
-# Config installation
-# -------------------------------------------------
-
-echo "-> Installing configurations..."
-mkdir -p "$HOME/.config"
-
-backup_config() {
-  local dir="$1"
-  if [ -d "$HOME/.config/$dir" ]; then
-    echo "Backing up existing $dir config..."
-    mv "$HOME/.config/$dir" \
-       "$HOME/.config/${dir}.bak.$(date +%s)"
-  fi
+# Network
+ping -c 1 archlinux.org >/dev/null 2>&1 || {
+  echo "No network."; exit 1;
 }
 
-if [ -d "config" ]; then
-  for dir in hypr waybar dunst kitty wofi; do
-    backup_config "$dir"
+# System update
+sudo pacman -S --noconfirm archlinux-keyring
+sudo pacman -Syu --noconfirm
+
+# Packages
+if compgen -G "pkgs/*.txt" > /dev/null; then
+  for f in pkgs/*.txt; do
+    sudo pacman -S --needed --noconfirm - < "$f"
   done
-  rsync -av config/ "$HOME/.config/"
-else
-  echo "Error: config directory not found"
-  exit 1
 fi
 
-# Make Hypr scripts executable (if present)
-if [ -d "$HOME/.config/hypr/scripts" ]; then
+# NetworkManager
+sudo systemctl enable --now NetworkManager >/dev/null 2>&1 || true
+
+# Configs
+mkdir -p "$HOME/.config"
+
+backup() {
+  [ -d "$HOME/.config/$1" ] &&
+    mv "$HOME/.config/$1" "$HOME/.config/$1.bak.$(date +%s)"
+}
+
+for d in hypr waybar dunst kitty wofi; do
+  backup "$d"
+done
+
+rsync -a config/ "$HOME/.config/"
+
+[ -d "$HOME/.config/hypr/scripts" ] &&
   chmod +x "$HOME/.config/hypr/scripts/"*.sh || true
-fi
 
-# -------------------------------------------------
-# Hyprland session registration
-# -------------------------------------------------
-
-SESSION_DIR="/usr/share/wayland-sessions"
-SESSION_FILE="$SESSION_DIR/hyprland.desktop"
-
-echo "-> Registering Hyprland session..."
-
-# Ensure Hyprland binary exists
-if ! command -v Hyprland >/dev/null 2>&1; then
-  echo "Hyprland not found, installing..."
+# Hyprland
+command -v Hyprland >/dev/null 2>&1 ||
   sudo pacman -S --noconfirm hyprland
-fi
 
-# Ensure session directory exists
-sudo mkdir -p "$SESSION_DIR"
-
-# Create session file if missing
-if [ ! -f "$SESSION_FILE" ]; then
-  sudo tee "$SESSION_FILE" > /dev/null << 'EOF'
+# Wayland session (force correct, no wrappers)
+sudo mkdir -p /usr/share/wayland-sessions
+sudo tee /usr/share/wayland-sessions/hyprland.desktop > /dev/null << 'EOF'
 [Desktop Entry]
 Name=Hyprland
 Comment=Dynamic Wayland Compositor
@@ -115,24 +58,13 @@ Exec=Hyprland
 Type=Application
 DesktopNames=Hyprland
 EOF
-fi
-
-# -------------------------------------------------
-# FetchX 
-# -------------------------------------------------
 
 echo
 echo "== Installing FetchX =="
 bash <(curl -fsSL https://raw.githubusercontent.com/v9mirza/fetchx/main/install.sh)
 
-# -------------------------------------------------
-# Done
-# -------------------------------------------------
-
 echo
-echo "Bootstrap complete."
-echo
+echo "Done."
 echo "Login options:"
 echo "  - With a display manager: select 'Hyprland'"
 echo "  - Without a display manager: log into TTY and run 'Hyprland'"
-echo
