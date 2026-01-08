@@ -3,13 +3,14 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrains Mono Nerd Font", monospace;
+    font-family: "JetBrains Mono", "Symbols Nerd Font", monospace;
     font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background: #1e1e2e; /* dark background */
+    background: #1e1e2e;
+    /* dark background */
     color: #cdd6f4;
 }
 
@@ -42,7 +43,8 @@ window#waybar {
 #mpd {
     padding: 0 10px;
     color: #cdd6f4;
-    background-color: transparent; /* transparent modules */
+    background-color: transparent;
+    /* transparent modules */
 }
 
 #clock {

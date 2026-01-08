@@ -1,5 +1,6 @@
 git
 networkmanager
+network-manager-applet
 pipewire
 wireplumber
 xdg-utils
