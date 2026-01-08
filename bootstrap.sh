@@ -20,7 +20,12 @@ sudo pacman -Syu --noconfirm
 # Packages
 if compgen -G "pkgs/*.txt" > /dev/null; then
   for f in pkgs/*.txt; do
-    sudo pacman -S --needed --noconfirm - < "$f"
+    echo "== Installing packages from $f =="
+    while IFS= read -r pkg; do
+      [[ -z "$pkg" || "$pkg" =~ ^# ]] && continue
+      sudo pacman -S --needed --noconfirm "$pkg" \
+        || echo "!! Failed to install: $pkg"
+    done < "$f"
   done
 fi
 
@@ -44,7 +49,7 @@ rsync -a config/ "$HOME/.config/"
 [ -d "$HOME/.config/hypr/scripts" ] &&
   chmod +x "$HOME/.config/hypr/scripts/"*.sh || true
 
-# Hyprland
+# Hyprland (safety net)
 command -v Hyprland >/dev/null 2>&1 ||
   sudo pacman -S --noconfirm hyprland
 
