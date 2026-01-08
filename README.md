@@ -1,4 +1,4 @@
-# arch-hypr
+# v9-hyprdots
 
 A minimal, reproducible Arch Linux + Hyprland base.
 
@@ -15,15 +15,13 @@ A minimal, reproducible Arch Linux + Hyprland base.
 
 ## Install
 ```bash
-git clone https://github.com/v9mirza/arch-hypr
-cd arch-hypr
+git clone https://github.com/v9mirza/v9-hyprdots
+cd v9-hyprdots  
 chmod +x bootstrap.sh
 ./bootstrap.sh
 ```
 Log out and start Hyprland.
 
-Keybindings
-Press SUPER + ? to see all shortcuts.
 
 Philosophy
 Clarity over cleverness.
