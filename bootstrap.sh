@@ -58,6 +58,12 @@ done
 sudo systemctl enable --now NetworkManager >/dev/null 2>&1 || true
 
 # --------------------------------------------------
+# Install FetchX
+# --------------------------------------------------
+echo "Installing FetchX (Default Tool)"
+curl -fsSL https://raw.githubusercontent.com/v9mirza/fetchx/main/install.sh | bash
+
+# --------------------------------------------------
 # Configs
 # --------------------------------------------------
 echo "== Installing configs =="
