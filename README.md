@@ -1,30 +1,24 @@
-# 🚀 v9-hyprdots
+---
 
-A streamlined **Arch Linux + Hyprland** bootstrap script. This setup transforms a fresh Arch install into a fully functional, aesthetic desktop environment with a single command.
+## v9-hyprdots
 
-No manual config copying, no broken dependencies—just a clean, ready-to-use rice.
+A simple script to set up **Arch Linux** with a **Hyprland-based desktop**. It automatically installs your apps and applies a clean, modern look so you don't have to configure everything manually.
 
 ---
 
-## ✨ Features
+### Features
 
-* **One-Command Setup:** Installs all required packages and applies configs.
-* **Modern Stack:** Uses **Waybar** (status bar), **Kitty** (terminal), and **Wofi** (launcher).
-* **System Ready:** Pre-configured networking, audio control, and brightness.
-* **Smart Scripts:** Includes custom scripts for screenshots and clipboard management.
-* **Idempotent:** Safe to rerun any time to fix broken configs or install missing tools.
+* **Easy Setup:** One script handles all installation and configuration.
+* **Essential Apps:** Includes a status bar (Waybar), terminal (Kitty), and app menu (Wofi).
+* **System Ready:** Audio, brightness, and networking work right away.
+* **Safety:** You can run the script multiple times to fix issues or update settings.
 
 ---
 
-## 🛠️ Installation
+### Installation
 
-### 1. Prerequisites
-
-* A fresh **Arch Linux** installation.
-* A user with `sudo` privileges (**Do not run as root**).
-* An active internet connection.
-
-### 2. Execution
+1. **Start with Arch:** Have a fresh Arch Linux install ready.
+2. **Run the script:** Open your terminal and run these commands:
 
 ```bash
 git clone https://github.com/v9mirza/v9-hyprdots.git
@@ -34,68 +28,27 @@ chmod +x bootstrap.sh
 
 ```
 
-### 3. Launching
-
-Once finished, log out and select **Hyprland** from your display manager, or launch directly from the TTY:
-
-```bash
-Hyprland
-
-```
+3. **Log in:** Restart your computer and select **Hyprland** at the login screen.
 
 ---
 
-## ⌨️ Keybindings
+### Main Controls
 
-The **Super** (Windows) key is set as the `$mainMod`.
+The **Windows key** (Super) is your main button for commands.
 
-### 🚀 Apps & Utilities
-
-| Keybind | Action |
+| Action | Keys |
 | --- | --- |
-| `$mod` + `ENTER` | Open Terminal (Kitty) |
-| `$mod` + `D` | Application Launcher (Wofi) |
-| `$mod` + `E` | File Manager (Thunar) |
-| `$mod` + `V` | Clipboard History |
-| `$mod` + `SHIFT` + `V` | Volume Control (Pavucontrol) |
-
-### 🖥️ System & Windows
-
-| Keybind | Action |
-| --- | --- |
-| `$mod` + `Q` | Kill Active Window |
-| `$mod` + `F` | Toggle Floating Mode |
-| `$mod` + `L` | Lock Screen (Hyprlock) |
-| `$mod` + `SHIFT` + `Q` | Exit Hyprland |
-| `Print` | Screenshot (Full Screen) |
-| `SHIFT` + `Print` | Screenshot (Select Region) |
-
-### 🔢 Workspaces
-
-| Keybind | Action |
-| --- | --- |
-| `$mod` + `1-9` | Switch to Workspace |
-| `$mod` + `SHIFT` + `1-9` | Move Window to Workspace |
+| **Open Terminal** | Windows + Enter |
+| **Open App Menu** | Windows + D |
+| **Close Window** | Windows + Q |
+| **Lock Screen** | Windows + L |
+| **Take Screenshot** | Print Screen |
+| **Switch Desktop** | Windows + 1-9 |
 
 ---
 
-## ⚙️ Customization
+### How to Customize
 
-You don't need to reinstall Arch to make changes. Simply edit the configuration files inside this repository and rerun the `./bootstrap.sh` script. It will automatically re-apply the clean state to your `~/.config` directory.
-
----
-
-## 📝 Notes
-
-* **Hardware Keys:** Volume and Brightness keys work out of the box via `pamixer` and `brightnessctl`.
-* **Clipboard:** Powered by `cliphist`. Use `$mod + V` to browse your history.
-* **Stability:** If a package fails to install, the script will skip it and continue to ensure you aren't left with a half-broken system.
+If you want to change your settings, just edit the files inside the `v9-hyprdots` folder and run `./bootstrap.sh` again. The script will update your system with your new changes automatically.
 
 ---
-
-**Author:** [@v9mirza](https://github.com/v9mirza)
-
-*If you find this useful, feel free to star the repo!*
-
----
-
