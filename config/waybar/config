@@ -27,15 +27,7 @@
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate",
-        "format": "{icon}",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "default": ""
-        }
+        "format": "{name}"
     },
     "group/hardware": {
         "orientation": "horizontal",
@@ -57,7 +49,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": " {:%H:%M}   {:%d/%m}",
+        "format": "{:%H:%M | %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
     },
     "backlight": {
