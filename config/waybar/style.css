@@ -1,30 +1,72 @@
-/* Minimal, clean style for Waybar */
+/* 
+ * Catppuccin Mocha - Waybar
+ * "Floating Pills" Design
+ */
 
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrains Mono", "Symbols Nerd Font", monospace;
-    font-size: 13px;
+    /* font-family: "JetBrains Mono Nerd Font", monospace; */
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
     min-height: 0;
 }
 
 window#waybar {
-    background: #1e1e2e;
-    /* dark background */
+    background: transparent;
     color: #cdd6f4;
+}
+
+tooltip {
+    background: #1e1e2e;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+/* 
+ * MODULES 
+ */
+
+#workspaces {
+    background: #1e1e2e;
+    margin: 5px;
+    padding: 0px 5px;
+    border-radius: 16px;
+    border: 1px solid #181825;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background: transparent;
+    padding: 0px 5px;
+    margin: 0px 3px;
+    border-radius: 16px;
     color: #cdd6f4;
-    border-bottom: 3px solid transparent;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background: #64727D;
-    border-bottom: 3px solid #cdd6f4;
+    background-color: #cba6f7;
+    color: #1e1e2e;
+    border-radius: 16px;
+    min-width: 50px;
+    background-size: 400% 400%;
 }
+
+#workspaces button:hover {
+    background-color: #f5c2e7;
+    color: #1e1e2e;
+    border-radius: 16px;
+    min-width: 50px;
+    background-size: 400% 400%;
+}
+
+/* 
+ * SYSTEM MODULES 
+ * (Pill Style: Background Surface0, Text Base)
+ */
 
 #clock,
 #battery,
@@ -39,14 +81,111 @@ window#waybar {
 #tray,
 #mode,
 #idle_inhibitor,
-#scratchpad,
 #mpd {
     padding: 0 10px;
+    margin: 5px;
     color: #cdd6f4;
-    background-color: transparent;
-    /* transparent modules */
+    /* Text */
+    background: #1e1e2e;
+    /* Base Background */
+    border-radius: 10px;
+    border-bottom: 2px solid transparent;
 }
 
+#window {
+    background: transparent;
+}
+
+/* 
+ * COLORS & ACCENTS 
+ */
+
 #clock {
-    background-color: #64727D;
+    color: #fab387;
+    /* Peach */
+    border-bottom: 2px solid #fab387;
+}
+
+#battery {
+    color: #a6e3a1;
+    /* Green */
+    border-bottom: 2px solid #a6e3a1;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #a6e3a1;
+    border-bottom: 2px solid #a6e3a1;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f38ba8;
+    color: #1e1e2e;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color: #89b4fa;
+    /* Blue */
+    border-bottom: 2px solid #89b4fa;
+}
+
+#memory {
+    color: #f5e0dc;
+    /* Rosewater */
+    border-bottom: 2px solid #f5e0dc;
+}
+
+#disk {
+    color: #94e2d5;
+    /* Teal */
+    border-bottom: 2px solid #94e2d5;
+}
+
+#backlight {
+    color: #f9e2af;
+    /* Yellow */
+    border-bottom: 2px solid #f9e2af;
+}
+
+#network {
+    color: #cba6f7;
+    /* Mauve */
+    border-bottom: 2px solid #cba6f7;
+}
+
+#network.disconnected {
+    background-color: #f38ba8;
+    color: #1e1e2e;
+}
+
+#pulseaudio {
+    color: #f2cdcd;
+    /* Flamingo */
+    border-bottom: 2px solid #f2cdcd;
+}
+
+#pulseaudio.muted {
+    background-color: #f38ba8;
+    color: #1e1e2e;
+}
+
+#idle_inhibitor {
+    color: #74c7ec;
+    /* Sapphire */
+    border-bottom: 2px solid #74c7ec;
+    border-radius: 20px;
+}
+
+#idle_inhibitor.activated {
+    background-color: #74c7ec;
+    color: #1e1e2e;
+}
+
+#tray {
+    background-color: #1e1e2e;
 }

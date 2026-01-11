@@ -1,11 +1,11 @@
 {
     "layer": "top",
     "position": "top",
-    "mode": "dock",
-    "exclusive": false,
+    "mod": "dock",
+    "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-
+    "height": 0,
     "modules-left": [
         "clock",
         "hyprland/workspaces"
@@ -15,10 +15,12 @@
     ],
     "modules-right": [
         "tray",
+        "idle_inhibitor",
+        "pulseaudio",
+        "backlight",
         "cpu",
         "memory",
-        "pulseaudio",
-        "pulseaudio#microphone",
+        "disk",
         "network",
         "battery"
     ],
@@ -44,25 +46,36 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
     },
 
-    "cpu": {
-        "interval": 10,
-        "format": " {usage}%",
-        "max-length": 10
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", ""],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        "min-length": 6
     },
 
-    "memory": {
-        "interval": 30,
-        "format": " {}%",
-        "max-length": 10
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
     },
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "",
-        "on-click": "pamixer -t || true",
-        "on-click-right": "pavucontrol || true",
-        "on-scroll-up": "pamixer -i 5 || true",
-        "on-scroll-down": "pamixer -d 5 || true",
+        "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
+        "scroll-step": 5,
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -78,31 +91,45 @@
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": "",
-        "on-click": "pamixer --default-source -t || true",
-        "on-click-right": "pavucontrol || true",
-        "on-scroll-up": "pamixer --default-source -i 5 || true",
-        "on-scroll-down": "pamixer --default-source -d 5 || true"
+        "on-click": "pamixer --default-source -t",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pamixer --default-source -i 5",
+        "on-scroll-down": "pamixer --default-source -d 5",
+        "scroll-step": 5
     },
 
     "network": {
-        "format-wifi": " {signalStrength}%",
-        "format-ethernet": "",
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
+    
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "max-length": 10
+    },
 
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+    
+    "disk": {
+        "interval": 30,
+        "format": " {percentage_used}%",
+        "path": "/"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     }
 }
