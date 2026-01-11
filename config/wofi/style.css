@@ -14,8 +14,10 @@
 */
 window {
     margin: 0px;
-    border: 2px solid #cba6f7; /* Mauve border */
-    background-color: rgba(30, 30, 46, 0.9); /* Base with opacity */
+    border: 2px solid #cba6f7;
+    /* Mauve border */
+    background-color: rgba(30, 30, 46, 0.9);
+    /* Base with opacity */
     border-radius: 12px;
 }
 
@@ -24,8 +26,10 @@ window {
     margin: 5px;
     border: none;
     border-radius: 8px;
-    background-color: #313244; /* Surface0 */
-    color: #cdd6f4; /* Text */
+    background-color: #313244;
+    /* Surface0 */
+    color: #cdd6f4;
+    /* Text */
     padding: 10px;
 }
 
@@ -52,18 +56,32 @@ window {
     border: none;
 }
 
-/* The Text Entries */
-#text {
+/* The Entries - distinct cards */
+#entry {
     margin: 5px;
-    border: none;
-    color: #cdd6f4;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid rgba(205, 214, 244, 0.1);
+    /* Subtle white border */
+    background-color: transparent;
 }
 
 /* Selected Entry */
 #entry:selected {
-    background-color: #cba6f7; /* Mauve accent */
-    color: #1e1e2e; /* Base background for contrast */
+    background-color: #cba6f7;
+    /* Mauve accent */
+    color: #1e1e2e;
+    /* Base background for contrast */
+    border: 1px solid #cba6f7;
+    /* Solid border matches background */
     border-radius: 8px;
+}
+
+/* Text needs less margin now */
+#text {
+    margin: 0px 5px;
+    border: none;
+    color: #cdd6f4;
 }
 
 /* Icons in the list */
