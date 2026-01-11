@@ -5,3 +5,16 @@ file-roller
 pavucontrol
 dunst
 libnotify
+btop
+wget
+curl
+openssh
+nmap
+zip
+unzip
+mesa
+ufw
+cmake
+neovim
+tar
+p7zip
