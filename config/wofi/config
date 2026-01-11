@@ -1,13 +1,14 @@
 # wofi config
-# minimal launcher settings
-
 mode=drun
 show=drun
-width=500
-height=300
-always_parse_args=true
-show_all=false
-print_command=true
-layer=overlay
+width=600
+height=400
+allow_images=true
+image_size=24
+lines=8
 insensitive=true
-prompt=Search...
+prompt=Search Apps...
+layer=overlay
+run-always_parse_args=true
+run-cache_file=/dev/null
+run-exec_search=true

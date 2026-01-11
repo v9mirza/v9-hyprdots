@@ -1,23 +1,40 @@
 /* wofi style.css */
-/* minimal dark theme matching hyprland */
+/* Catppuccin Mocha - Modern & Beautiful */
 
-window {
-    margin: 0px;
-    border: 2px solid #64727D;
-    /* accent color */
-    background-color: #1e1e2e;
-    border-radius: 10px;
+/* Global Reset */
+* {
+    font-family: "JetBrains Mono Nerd Font", monospace;
+    font-size: 14px;
 }
 
+/* 
+   Window Frame
+   - Transparent background
+   - Cool colored border
+*/
+window {
+    margin: 0px;
+    border: 2px solid #cba6f7; /* Mauve border */
+    background-color: rgba(30, 30, 46, 0.9); /* Base with opacity */
+    border-radius: 12px;
+}
+
+/* The Input Box */
 #input {
     margin: 5px;
     border: none;
-    background-color: #313244;
-    color: #cdd6f4;
-    border-radius: 5px;
+    border-radius: 8px;
+    background-color: #313244; /* Surface0 */
+    color: #cdd6f4; /* Text */
     padding: 10px;
 }
 
+#input:focus {
+    /* Optional: distinctive focus if needed */
+    outline: none;
+}
+
+/* The List Container */
 #inner-box {
     margin: 5px;
     border: none;
@@ -35,14 +52,22 @@ window {
     border: none;
 }
 
+/* The Text Entries */
 #text {
     margin: 5px;
     border: none;
     color: #cdd6f4;
 }
 
+/* Selected Entry */
 #entry:selected {
-    background-color: #64727D;
-    color: #cdd6f4;
-    border-radius: 5px;
+    background-color: #cba6f7; /* Mauve accent */
+    color: #1e1e2e; /* Base background for contrast */
+    border-radius: 8px;
+}
+
+/* Icons in the list */
+#img {
+    margin-right: 10px;
+    background-color: transparent;
 }
