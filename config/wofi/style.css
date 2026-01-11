@@ -1,90 +1,78 @@
 /* wofi style.css */
-/* Catppuccin Mocha - Modern & Beautiful */
+/* Batman Theme - Black & Yellow */
 
 /* Global Reset */
 * {
     font-family: "JetBrains Mono Nerd Font", monospace;
     font-size: 14px;
+    font-weight: bold;
 }
 
 /* 
    Window Frame
-   - Transparent background
-   - Cool colored border
+   - Deep Black background
+   - Signal Yellow border
 */
 window {
     margin: 0px;
-    border: 2px solid #cba6f7;
-    /* Mauve border */
-    background-color: rgba(30, 30, 46, 0.9);
-    /* Base with opacity */
-    border-radius: 12px;
+    border: 2px solid #FFD700;
+    /* Yellow Border */
+    background-color: rgba(5, 5, 5, 0.95);
+    /* Nearly Opaque Black */
+    border-radius: 6px;
+    /* Sharper corners for Batman look */
 }
 
 /* The Input Box */
 #input {
     margin: 5px;
-    border: none;
-    border-radius: 8px;
-    background-color: #313244;
-    /* Surface0 */
-    color: #cdd6f4;
-    /* Text */
+    border: 1px solid #333333;
+    border-radius: 4px;
+    background-color: #101010;
+    color: #FFD700;
+    /* Yellow Text */
     padding: 10px;
 }
 
 #input:focus {
-    /* Optional: distinctive focus if needed */
+    border: 1px solid #FFD700;
     outline: none;
 }
 
-/* The List Container */
-#inner-box {
-    margin: 5px;
-    border: none;
-    background-color: transparent;
-}
-
-#outer-box {
-    margin: 5px;
-    border: none;
-    background-color: transparent;
-}
-
-#scroll {
-    margin: 0px;
-    border: none;
-}
-
-/* The Entries - distinct cards */
 /* The Entries - Clean List with Separator */
 #entry {
     margin: 0px 5px;
     padding: 10px;
     border-radius: 0px;
     border: none;
-    border-bottom: 1px solid rgba(205, 214, 244, 0.1);
-    /* Separator line */
+    border-bottom: 1px solid #1a1a1a;
+    /* Dark Separator */
     background-color: transparent;
 }
 
 /* Selected Entry */
 #entry:selected {
-    background-color: rgba(203, 166, 247, 0.3);
-    /* Transparent Mauve */
-    color: #cdd6f4;
-    /* Keep text light */
+    background-color: #FFD700;
+    /* Yellow Background */
+    color: #000000;
+    /* Black Text */
     border: none;
-    border-bottom: 1px solid #cba6f7;
-    /* Highlighted separator */
-    border-radius: 5px;
+    border-radius: 4px;
+    font-weight: 800;
+    /* Extra bold */
 }
 
 /* Text needs less margin now */
 #text {
     margin: 0px 5px;
     border: none;
-    color: #cdd6f4;
+    color: #ffffff;
+    /* White text by default */
+}
+
+#entry:selected #text {
+    color: #000000;
+    /* Black text on selection */
 }
 
 /* Icons in the list */

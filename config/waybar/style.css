@@ -1,6 +1,6 @@
 /* 
- * Catppuccin Mocha - Waybar
- * "Floating Pills" Design
+ * Batman Theme - Waybar
+ * "Black & Yellow" Design
  */
 
 * {
@@ -14,15 +14,13 @@
 
 window#waybar {
     background: transparent;
-    color: #cdd6f4;
+    color: #ffffff;
 }
 
 tooltip {
-    background: #1e1e2e;
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #11111b;
+    background: #000000;
+    border: 1px solid #FFD700;
+    border-radius: 5px;
 }
 
 /* 
@@ -30,36 +28,34 @@ tooltip {
  */
 
 #workspaces {
-    background: #1e1e2e;
+    background: #000000;
     margin: 5px;
     padding: 0px 5px;
-    border-radius: 16px;
-    border: 1px solid #181825;
+    border-radius: 6px;
+    border: 1px solid #333333;
 }
 
 #workspaces button {
     padding: 0px 5px;
     margin: 0px 3px;
-    border-radius: 16px;
-    color: #cdd6f4;
+    border-radius: 4px;
+    color: #888888;
     background: transparent;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background-color: #cba6f7;
-    color: #1e1e2e;
-    border-radius: 16px;
+    background-color: #FFD700;
+    color: #000000;
+    border-radius: 4px;
     min-width: 50px;
-    background-size: 400% 400%;
+    font-weight: 900;
 }
 
 #workspaces button:hover {
-    background-color: #f5c2e7;
-    color: #1e1e2e;
-    border-radius: 16px;
-    min-width: 50px;
-    background-size: 400% 400%;
+    background-color: #333333;
+    color: #FFD700;
+    border-radius: 4px;
 }
 
 /* 
@@ -68,23 +64,15 @@ tooltip {
  */
 #hardware,
 #controls {
-    background: #1e1e2e;
+    background: #000000;
     margin: 5px;
     padding: 0px 5px;
-    border-radius: 15px;
-    /* Pill shape */
-    border-bottom: 2px solid #89b4fa;
-    /* Blue accent for hardware group default */
-}
-
-#controls {
-    border-bottom: 2px solid #f2cdcd;
-    /* Flamingo accent for controls */
+    border-radius: 6px;
+    border-bottom: 2px solid #FFD700;
 }
 
 /* 
  * GROUPED MODULES 
- * (Transparent background, no margins inside group)
  */
 #hardware #cpu,
 #hardware #memory,
@@ -93,9 +81,9 @@ tooltip {
 #controls #backlight {
     background: transparent;
     border: none;
-    /* Borders handled by group */
     margin: 0;
     padding: 0 10px;
+    color: #ffffff;
 }
 
 /* 
@@ -109,9 +97,9 @@ tooltip {
 #mpd {
     padding: 0 10px;
     margin: 5px;
-    color: #cdd6f4;
-    background: #1e1e2e;
-    border-radius: 10px;
+    color: #ffffff;
+    background: #000000;
+    border-radius: 6px;
     border-bottom: 2px solid transparent;
 }
 
@@ -121,31 +109,31 @@ tooltip {
 
 /* 
  * COLORS & ACCENTS 
+ * Everything gets The Signal (Yellow) or Dark Grey
  */
 
 #clock {
-    color: #fab387;
-    /* Peach */
-    border-bottom: 2px solid #fab387;
-    border-radius: 15px;
-    /* Centerpiece needs rounding */
+    color: #FFD700;
+    /* Yellow */
+    border-bottom: 2px solid #FFD700;
+    border-radius: 6px;
 }
 
 #battery {
-    color: #a6e3a1;
-    /* Green */
-    border-bottom: 2px solid #a6e3a1;
+    color: #FFD700;
+    border-bottom: 2px solid #FFD700;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: #a6e3a1;
-    border-bottom: 2px solid #a6e3a1;
+    color: #2AD2C9;
+    /* Cyan for charging energy */
+    border-bottom: 2px solid #2AD2C9;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f38ba8;
-    color: #1e1e2e;
+    background-color: #ff3333;
+    color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -154,28 +142,25 @@ tooltip {
 }
 
 #network {
-    color: #cba6f7;
-    /* Mauve */
-    border-bottom: 2px solid #cba6f7;
+    color: #ffffff;
+    border-bottom: 2px solid #333333;
 }
 
 #network.disconnected {
-    background-color: #f38ba8;
-    color: #1e1e2e;
+    color: #ff3333;
 }
 
 #idle_inhibitor {
-    color: #74c7ec;
-    /* Sapphire */
-    border-bottom: 2px solid #74c7ec;
+    color: #FFD700;
+    border-bottom: 2px solid #FFD700;
     border-radius: 20px;
 }
 
 #idle_inhibitor.activated {
-    background-color: #74c7ec;
-    color: #1e1e2e;
+    background-color: #FFD700;
+    color: #000000;
 }
 
 #tray {
-    background-color: #1e1e2e;
+    background-color: #000000;
 }
