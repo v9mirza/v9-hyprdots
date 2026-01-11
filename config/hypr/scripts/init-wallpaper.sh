@@ -11,7 +11,7 @@ hyprpaper &
 sleep 1
 
 # Set the wallpaper
-WALLPAPER="$HOME/.config/hypr/wallpapers/batman.png"
+WALLPAPER="$HOME/.config/hypr/wallpapers/batmobile.png"
 
 hyprctl hyprpaper preload "$WALLPAPER"
 hyprctl hyprpaper wallpaper ",$WALLPAPER"
