@@ -1,5 +1,5 @@
 /* wofi style.css */
-/* Batman Theme - Black & Yellow */
+/* Dark Knight Theme - Tactical Grey */
 
 /* Global Reset */
 * {
@@ -10,32 +10,31 @@
 
 /* 
    Window Frame
-   - Deep Black background
-   - Signal Yellow border
+   - Pure Black background
+   - Silver Border
 */
 window {
     margin: 0px;
-    border: 2px solid #FFD700;
-    /* Yellow Border */
-    background-color: rgba(5, 5, 5, 0.95);
-    /* Nearly Opaque Black */
-    border-radius: 6px;
-    /* Sharper corners for Batman look */
+    border: 2px solid #a9a9a9;
+    /* Silver Border */
+    background-color: rgba(0, 0, 0, 0.95);
+    /* Opaque Black */
+    border-radius: 4px;
 }
 
 /* The Input Box */
 #input {
     margin: 5px;
     border: 1px solid #333333;
-    border-radius: 4px;
-    background-color: #101010;
-    color: #FFD700;
-    /* Yellow Text */
+    border-radius: 2px;
+    background-color: #111111;
+    color: #ffffff;
+    /* White Text */
     padding: 10px;
 }
 
 #input:focus {
-    border: 1px solid #FFD700;
+    border: 1px solid #a9a9a9;
     outline: none;
 }
 
@@ -45,37 +44,34 @@ window {
     padding: 10px;
     border-radius: 0px;
     border: none;
-    border-bottom: 1px solid #1a1a1a;
-    /* Dark Separator */
+    border-bottom: 1px solid #222222;
+    /* Very Subtle Separator */
     background-color: transparent;
 }
 
 /* Selected Entry */
 #entry:selected {
-    background-color: #FFD700;
-    /* Yellow Background */
-    color: #000000;
-    /* Black Text */
+    background-color: #333333;
+    /* Gunmetal Background */
+    color: #ffffff;
+    /* White Text */
     border: none;
-    border-radius: 4px;
+    border-radius: 2px;
     font-weight: 800;
-    /* Extra bold */
 }
 
-/* Text needs less margin now */
 #text {
     margin: 0px 5px;
     border: none;
-    color: #ffffff;
-    /* White text by default */
+    color: #888888;
+    /* Dimmed text by default */
 }
 
 #entry:selected #text {
-    color: #000000;
-    /* Black text on selection */
+    color: #ffffff;
+    /* Bright white on selection */
 }
 
-/* Icons in the list */
 #img {
     margin-right: 10px;
     background-color: transparent;

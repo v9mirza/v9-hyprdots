@@ -1,6 +1,6 @@
 /* 
- * Batman Theme - Waybar
- * "Black & Yellow" Design
+ * Dark Knight Theme - Waybar
+ * "Tactical Monochrome" Design
  */
 
 * {
@@ -14,13 +14,13 @@
 
 window#waybar {
     background: transparent;
-    color: #ffffff;
+    color: #cccccc;
 }
 
 tooltip {
     background: #000000;
-    border: 1px solid #FFD700;
-    border-radius: 5px;
+    border: 1px solid #a9a9a9;
+    border-radius: 2px;
 }
 
 /* 
@@ -31,31 +31,32 @@ tooltip {
     background: #000000;
     margin: 5px;
     padding: 0px 5px;
-    border-radius: 6px;
-    border: 1px solid #333333;
+    border-radius: 4px;
+    border: 1px solid #222222;
 }
 
 #workspaces button {
     padding: 0px 5px;
     margin: 0px 3px;
-    border-radius: 4px;
-    color: #888888;
+    border-radius: 2px;
+    color: #666666;
     background: transparent;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background-color: #FFD700;
+    background-color: #a9a9a9;
+    /* Silver */
     color: #000000;
-    border-radius: 4px;
+    border-radius: 2px;
     min-width: 50px;
     font-weight: 900;
 }
 
 #workspaces button:hover {
     background-color: #333333;
-    color: #FFD700;
-    border-radius: 4px;
+    color: #ffffff;
+    border-radius: 2px;
 }
 
 /* 
@@ -67,8 +68,9 @@ tooltip {
     background: #000000;
     margin: 5px;
     padding: 0px 5px;
-    border-radius: 6px;
-    border-bottom: 2px solid #FFD700;
+    border-radius: 4px;
+    border-bottom: 2px solid #555555;
+    /* Gunmetal Underline */
 }
 
 /* 
@@ -83,7 +85,7 @@ tooltip {
     border: none;
     margin: 0;
     padding: 0 10px;
-    color: #ffffff;
+    color: #cccccc;
 }
 
 /* 
@@ -97,9 +99,9 @@ tooltip {
 #mpd {
     padding: 0 10px;
     margin: 5px;
-    color: #ffffff;
+    color: #cccccc;
     background: #000000;
-    border-radius: 6px;
+    border-radius: 4px;
     border-bottom: 2px solid transparent;
 }
 
@@ -109,31 +111,31 @@ tooltip {
 
 /* 
  * COLORS & ACCENTS 
- * Everything gets The Signal (Yellow) or Dark Grey
+ * Everything is Monochrome (Silver, Grey, White)
  */
 
 #clock {
-    color: #FFD700;
-    /* Yellow */
-    border-bottom: 2px solid #FFD700;
-    border-radius: 6px;
+    color: #ffffff;
+    /* Pure White */
+    border-bottom: 2px solid #a9a9a9;
+    /* Silver */
+    border-radius: 4px;
 }
 
 #battery {
-    color: #FFD700;
-    border-bottom: 2px solid #FFD700;
+    color: #dddddd;
+    border-bottom: 2px solid #555555;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: #2AD2C9;
-    /* Cyan for charging energy */
-    border-bottom: 2px solid #2AD2C9;
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #ff3333;
-    color: #ffffff;
+    background-color: #333333;
+    color: #ff3333;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -142,7 +144,7 @@ tooltip {
 }
 
 #network {
-    color: #ffffff;
+    color: #dddddd;
     border-bottom: 2px solid #333333;
 }
 
@@ -151,13 +153,13 @@ tooltip {
 }
 
 #idle_inhibitor {
-    color: #FFD700;
-    border-bottom: 2px solid #FFD700;
+    color: #a9a9a9;
+    border-bottom: 2px solid #a9a9a9;
     border-radius: 20px;
 }
 
 #idle_inhibitor.activated {
-    background-color: #FFD700;
+    background-color: #a9a9a9;
     color: #000000;
 }
 
