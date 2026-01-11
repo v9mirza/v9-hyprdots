@@ -24,37 +24,34 @@
         "network",
         "battery"
     ],
-
     "hyprland/window": {
         "format": "{}"
     },
-
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate",
         "format": "{name}"
     },
-
     "tray": {
         "icon-size": 13,
         "spacing": 10
     },
-
     "clock": {
         "format": "{: %R   %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
     },
-
     "backlight": {
-        "device": "intel_backlight",
         "format": "{icon} {percent}%",
-        "format-icons": ["", "", ""],
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-",
         "min-length": 6
     },
-
     "battery": {
         "states": {
             "good": 95,
@@ -65,9 +62,14 @@
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
-
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "",
@@ -83,10 +85,13 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         }
     },
-
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": " {volume}%",
@@ -97,7 +102,6 @@
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
     },
-
     "network": {
         "format-wifi": "  {signalStrength}%",
         "format-ethernet": "{ipaddr}/{cidr} ",
@@ -106,25 +110,21 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-    
     "cpu": {
         "interval": 10,
         "format": " {usage}%",
         "max-length": 10
     },
-
     "memory": {
         "interval": 30,
         "format": " {}%",
         "max-length": 10
     },
-    
     "disk": {
         "interval": 30,
         "format": " {percentage_used}%",
         "path": "/"
     },
-
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
