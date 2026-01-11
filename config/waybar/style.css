@@ -6,7 +6,6 @@
 * {
     border: none;
     border-radius: 0;
-    /* font-family: "JetBrains Mono Nerd Font", monospace; */
     font-family: "JetBrains Mono Nerd Font";
     font-weight: bold;
     font-size: 14px;
@@ -64,30 +63,54 @@ tooltip {
 }
 
 /* 
- * SYSTEM MODULES 
- * (Pill Style: Background Surface0, Text Base)
+ * GROUPS
+ * Unified pill style for groups
  */
+#hardware,
+#controls {
+    background: #1e1e2e;
+    margin: 5px;
+    padding: 0px 5px;
+    border-radius: 15px;
+    /* Pill shape */
+    border-bottom: 2px solid #89b4fa;
+    /* Blue accent for hardware group default */
+}
 
+#controls {
+    border-bottom: 2px solid #f2cdcd;
+    /* Flamingo accent for controls */
+}
+
+/* 
+ * GROUPED MODULES 
+ * (Transparent background, no margins inside group)
+ */
+#hardware #cpu,
+#hardware #memory,
+#hardware #disk,
+#controls #pulseaudio,
+#controls #backlight {
+    background: transparent;
+    border: none;
+    /* Borders handled by group */
+    margin: 0;
+    padding: 0 10px;
+}
+
+/* 
+ * STANDALONE MODULES 
+ */
 #clock,
 #battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
 #network,
-#pulseaudio,
-#custom-media,
 #tray,
-#mode,
 #idle_inhibitor,
 #mpd {
     padding: 0 10px;
     margin: 5px;
     color: #cdd6f4;
-    /* Text */
     background: #1e1e2e;
-    /* Base Background */
     border-radius: 10px;
     border-bottom: 2px solid transparent;
 }
@@ -104,6 +127,8 @@ tooltip {
     color: #fab387;
     /* Peach */
     border-bottom: 2px solid #fab387;
+    border-radius: 15px;
+    /* Centerpiece needs rounding */
 }
 
 #battery {
@@ -128,30 +153,6 @@ tooltip {
     animation-direction: alternate;
 }
 
-#cpu {
-    color: #89b4fa;
-    /* Blue */
-    border-bottom: 2px solid #89b4fa;
-}
-
-#memory {
-    color: #f5e0dc;
-    /* Rosewater */
-    border-bottom: 2px solid #f5e0dc;
-}
-
-#disk {
-    color: #94e2d5;
-    /* Teal */
-    border-bottom: 2px solid #94e2d5;
-}
-
-#backlight {
-    color: #f9e2af;
-    /* Yellow */
-    border-bottom: 2px solid #f9e2af;
-}
-
 #network {
     color: #cba6f7;
     /* Mauve */
@@ -159,17 +160,6 @@ tooltip {
 }
 
 #network.disconnected {
-    background-color: #f38ba8;
-    color: #1e1e2e;
-}
-
-#pulseaudio {
-    color: #f2cdcd;
-    /* Flamingo */
-    border-bottom: 2px solid #f2cdcd;
-}
-
-#pulseaudio.muted {
     background-color: #f38ba8;
     color: #1e1e2e;
 }

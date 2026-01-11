@@ -7,20 +7,16 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "clock",
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "hyprland/window"
+        "clock"
     ],
     "modules-right": [
         "tray",
         "idle_inhibitor",
-        "pulseaudio",
-        "backlight",
-        "cpu",
-        "memory",
-        "disk",
+        "group/controls",
+        "group/hardware",
         "network",
         "battery"
     ],
@@ -32,6 +28,21 @@
         "all-outputs": true,
         "on-click": "activate",
         "format": "{name}"
+    },
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+            "disk"
+        ]
+    },
+    "group/controls": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio",
+            "backlight"
+        ]
     },
     "tray": {
         "icon-size": 13,
@@ -91,16 +102,6 @@
                 ""
             ]
         }
-    },
-    "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
-        "on-click": "pamixer --default-source -t",
-        "on-click-right": "pavucontrol",
-        "on-scroll-up": "pamixer --default-source -i 5",
-        "on-scroll-down": "pamixer --default-source -d 5",
-        "scroll-step": 5
     },
     "network": {
         "format-wifi": "  {signalStrength}%",
