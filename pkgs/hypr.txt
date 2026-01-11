@@ -11,6 +11,6 @@ libnotify
 cliphist
 brightnessctl
 pamixer
-ttf-jetbrains-mono
+ttf-jetbrains-mono-nerd
 ttf-nerd-fonts-symbols
-ttf-font-awesom
+ttf-font-awesome
