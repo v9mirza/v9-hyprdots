@@ -7,8 +7,10 @@ hypridle
 grim
 slurp
 wl-clipboard
+libnotify
 cliphist
 brightnessctl
 pamixer
 ttf-jetbrains-mono
 ttf-nerd-fonts-symbols
+ttf-font-awesom
