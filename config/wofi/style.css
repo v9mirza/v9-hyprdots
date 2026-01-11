@@ -57,24 +57,27 @@ window {
 }
 
 /* The Entries - distinct cards */
+/* The Entries - Clean List with Separator */
 #entry {
-    margin: 5px;
-    padding: 5px;
-    border-radius: 8px;
-    border: 1px solid rgba(205, 214, 244, 0.1);
-    /* Subtle white border */
+    margin: 0px 5px;
+    padding: 10px;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid rgba(205, 214, 244, 0.1);
+    /* Separator line */
     background-color: transparent;
 }
 
 /* Selected Entry */
 #entry:selected {
-    background-color: #cba6f7;
-    /* Mauve accent */
-    color: #1e1e2e;
-    /* Base background for contrast */
-    border: 1px solid #cba6f7;
-    /* Solid border matches background */
-    border-radius: 8px;
+    background-color: rgba(203, 166, 247, 0.3);
+    /* Transparent Mauve */
+    color: #cdd6f4;
+    /* Keep text light */
+    border: none;
+    border-bottom: 1px solid #cba6f7;
+    /* Highlighted separator */
+    border-radius: 5px;
 }
 
 /* Text needs less margin now */
