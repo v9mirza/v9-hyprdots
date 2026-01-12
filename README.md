@@ -1,54 +1,67 @@
----
+# Hyprland: Dark Knight Edition
 
-## v9-hyprdots
+> "It's not who I am underneath, but what I do that defines me."
 
-A simple script to set up **Arch Linux** with a **Hyprland-based desktop**. It automatically installs your apps and applies a clean, modern look so you don't have to configure everything manually.
+![Home](assets/home.png)
 
----
-
-### Features
-
-* **Easy Setup:** One script handles all installation and configuration.
-* **Essential Apps:** Includes a status bar (Waybar), terminal (Kitty), and app menu (Wofi).
-* **System Ready:** Audio, brightness, and networking work right away.
-* **Safety:** You can run the script multiple times to fix issues or update settings.
+A hyper-minimalist, **tactical monochrome** configuration for Arch Linux. Designed for focus, speed, and immersion.
 
 ---
 
-### Installation
+## 📸 Gallery
 
-1. **Start with Arch:** Have a fresh Arch Linux install ready.
-2. **Run the script:** Open your terminal and run these commands:
+| **Terminal (Kitty + FetchX)** | **App Launcher (Wofi)** |
+| :---: | :---: |
+| ![Terminal](assets/terminal.png) | ![Wofi](assets/wofi.png) |
+
+---
+
+## 🗡️ Aesthetics
+*   **Theme**: Pure Black (`#000000`) & Silver Gradient (`#555555`).
+*   **Hyprland**: 1px borders with active gradient. Cinematic animations.
+*   **Hyprlock**: "The Void" Layout. No images. Massive typography.
+*   **Waybar**: Floating Pills. Modular and clean.
+*   **Cursor**: Bibata Modern Ice.
+*   **Shell**: Starship (Tactical Preset) + FetchX (Auto-run).
+
+## 🚀 Installation
+
+**Requirements**: A fresh install of Arch Linux.
 
 ```bash
+# 1. Clone the repository
 git clone https://github.com/v9mirza/v9-hyprdots.git
 cd v9-hyprdots
+
+# 2. Run the bootstrap script
 chmod +x bootstrap.sh
 ./bootstrap.sh
-
 ```
 
-3. **Log in:** Restart your computer and select **Hyprland** at the login screen.
+**What it does:**
+1.  Installs all dependencies (Hyprland, Kitty, Waybar, Fonts, etc.).
+2.  Backs up your existing configs.
+3.  Deploys the "Dark Knight" configuration.
+4.  Installs **FetchX** and configures `.bashrc` for auto-launch.
+
+## ⌨️ Controls
+
+| Action | Keybinding |
+| :--- | :--- |
+| **Terminal** | `Super` + `Enter` |
+| **App Launcher** | `Super` + `D` |
+| **File Manager** | `Super` + `E` |
+| **Close Window** | `Super` + `Q` |
+| **Lock Screen** | `Super` + `L` |
+| **Screenshot** | `Print` (Full) / `Shift` + `Print` (Region) |
+| **Reload Config** | `Super` + `Shift` + `C` |
+| **Exit Hyprland** | `Super` + `Shift` + `Q` |
+
+## 🛠️ Customization
+Edit the files in `~/.config/hypr/` to tweak settings.
+*   **Animations**: `~/.config/hypr/animations.conf`
+*   **Keybinds**: `~/.config/hypr/keybinds.conf`
+*   **Looks**: `~/.config/hypr/general.conf`
 
 ---
-
-### Main Controls
-
-The **Windows key** (Super) is your main button for commands.
-
-| Action | Keys |
-| --- | --- |
-| **Open Terminal** | Windows + Enter |
-| **Open App Menu** | Windows + D |
-| **Close Window** | Windows + Q |
-| **Lock Screen** | Windows + L |
-| **Take Screenshot** | Print Screen |
-| **Switch Desktop** | Windows + 1-9 |
-
----
-
-### How to Customize
-
-If you want to change your settings, just edit the files inside the `v9-hyprdots` folder and run `./bootstrap.sh` again. The script will update your system with your new changes automatically.
-
----
+*Built with precision.*
