@@ -1,30 +1,44 @@
-# starship.toml
-# Dark Knight - Tactical Monochrome
+# Starship Prompt
+# Dark Knight – Tactical Monochrome
+# Optimized for Hyprland + Bash/Zsh
 
 add_newline = false
 
+format = "$username$hostname$directory$git_branch$git_status$cmd_duration$character"
+
+# ── Prompt Character ──────────────────────────────────────────────
 [character]
 success_symbol = "[❯](bold white)"
-error_symbol = "[❯](bold red)"
+error_symbol   = "[❯](bold red)"
 
+# ── Directory ─────────────────────────────────────────────────────
 [directory]
 style = "bold white"
 truncation_length = 3
 truncate_to_repo = false
 
+# ── Git ───────────────────────────────────────────────────────────
 [git_branch]
-style = "bold #555555"
+symbol = " "
+style = "bold #777777"
 format = "[$symbol$branch]($style) "
 
 [git_status]
 style = "bold red"
-format = "[$all_status$ahead_behind]($style) "
+format = "[$modified$untracked$ahead_behind]($style) "
 
-[package]
-disabled = false
-style = "bold #555555"
-format = "via [$symbol$version]($style) "
-
+# ── Command Duration ──────────────────────────────────────────────
 [cmd_duration]
+min_time = 1500
 style = "bold #333333"
 format = "took [$duration]($style) "
+
+# ── Identity (only when it matters) ───────────────────────────────
+[username]
+show_always = false
+style_user = "bold #777777"
+style_root = "bold red"
+
+[hostname]
+ssh_only = true
+style = "bold #777777"
