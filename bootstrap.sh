@@ -118,6 +118,12 @@ if ! grep -q "starship init bash" ~/.bashrc; then
   echo "== Configuring Shell =="
   echo 'eval "$(starship init bash)"' >> ~/.bashrc
   echo "→ Added Starship to ~/.bashrc"
+
+fi
+
+if ! grep -q "fetchx" ~/.bashrc; then
+  echo "fetchx" >> ~/.bashrc
+  echo "→ Added FetchX to ~/.bashrc startup"
 fi
 
 # --------------------------------------------------
