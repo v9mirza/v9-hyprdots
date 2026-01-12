@@ -31,12 +31,17 @@
     min_icon_size = 32
     max_icon_size = 64
     
-    # Borders
-    frame_width = 1
-    frame_color = "#444444"
+    # Borders (Void Style - No Border)
+    frame_width = 0
+    frame_color = "#000000"
     separator_color = frame
-    padding = 12
-    horizontal_padding = 12
+    padding = 16
+    horizontal_padding = 16
+    
+    # Shadows (The Projection)
+    enable_shadow = true
+    shadow_blur_radius = 20
+    shadow_color = "#000000"
     
     # Mouse
     mouse_left_click = close_current
@@ -45,18 +50,17 @@
 
 [urgency_low]
     background = "#000000"
-    foreground = "#888888"
-    frame_color = "#333333"
+    foreground = "#555555"
     timeout = 10
 
 [urgency_normal]
-    background = "#050505"
+    background = "#000000"
     foreground = "#ffffff"
-    frame_color = "#a9a9a9" # Silver
     timeout = 10
 
 [urgency_critical]
-    background = "#1a1a1a"
-    foreground = "#ffffff"
-    frame_color = "#ff3333" # Muted Red
+    background = "#000000"
+    foreground = "#ff3333" # Muted Red Text
+    frame_color = "#ff3333" # Red Border only for Critical
+    frame_width = 2
     timeout = 0

@@ -14,3 +14,5 @@ pamixer
 ttf-jetbrains-mono-nerd
 ttf-nerd-fonts-symbols
 ttf-font-awesome
+bibata-cursor-theme
+papirus-icon-theme
