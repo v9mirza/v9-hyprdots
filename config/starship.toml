@@ -1,0 +1,30 @@
+# starship.toml
+# Dark Knight - Tactical Monochrome
+
+add_newline = false
+
+[character]
+success_symbol = "[❯](bold white)"
+error_symbol = "[❯](bold red)"
+
+[directory]
+style = "bold white"
+truncation_length = 3
+truncate_to_repo = false
+
+[git_branch]
+style = "bold #555555"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold red"
+format = "[$all_status$ahead_behind]($style) "
+
+[package]
+disabled = false
+style = "bold #555555"
+format = "via [$symbol$version]($style) "
+
+[cmd_duration]
+style = "bold #333333"
+format = "took [$duration]($style) "

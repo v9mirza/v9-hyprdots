@@ -112,6 +112,15 @@ Type=Application
 EOF
 
 # --------------------------------------------------
+# Shell Setup (Starship)
+# --------------------------------------------------
+if ! grep -q "starship init bash" ~/.bashrc; then
+  echo "== Configuring Shell =="
+  echo 'eval "$(starship init bash)"' >> ~/.bashrc
+  echo "→ Added Starship to ~/.bashrc"
+fi
+
+# --------------------------------------------------
 # Summary
 # --------------------------------------------------
 echo

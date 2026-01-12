@@ -19,3 +19,5 @@ neovim
 tar
 p7zip
 gthumb
+starship
+nwg-look
