@@ -122,7 +122,13 @@ if ! grep -q "starship init bash" ~/.bashrc; then
 fi
 
 if ! grep -q "fetchx" ~/.bashrc; then
-  echo "fetchx" >> ~/.bashrc
+  cat <<EOF >> ~/.bashrc
+
+# Auto-run fetchx
+if [[ \$SHLVL -eq 1 ]] && command -v fetchx >/dev/null; then
+  fetchx
+fi
+EOF
   echo "→ Added FetchX to ~/.bashrc startup"
 fi
 
