@@ -1,1 +1,168 @@
-style-dark.css
+/* 
+ * Dark Knight Theme - Waybar
+ * "Tactical Monochrome" Design
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #cccccc;
+}
+
+tooltip {
+    background: #000000;
+    border: 1px solid #a9a9a9;
+    border-radius: 2px;
+}
+
+/* 
+ * MODULES 
+ */
+
+#workspaces {
+    background: #000000;
+    margin: 5px;
+    padding: 0px 5px;
+    border-radius: 4px;
+    border: 1px solid #222222;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 0px 3px;
+    border-radius: 2px;
+    color: #666666;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background-color: #a9a9a9;
+    /* Silver */
+    color: #000000;
+    border-radius: 2px;
+    min-width: 50px;
+    font-weight: 900;
+}
+
+#workspaces button:hover {
+    background-color: #333333;
+    color: #ffffff;
+    border-radius: 2px;
+}
+
+/* 
+ * GROUPS
+ * Unified pill style for groups
+ */
+#hardware,
+#controls {
+    background: #000000;
+    margin: 5px;
+    padding: 0px 5px;
+    border-radius: 4px;
+    border-bottom: 2px solid #555555;
+    /* Gunmetal Underline */
+}
+
+/* 
+ * GROUPED MODULES 
+ */
+#hardware #cpu,
+#hardware #memory,
+#hardware #disk,
+#controls #pulseaudio,
+#controls #backlight {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 10px;
+    color: #cccccc;
+}
+
+/* 
+ * STANDALONE MODULES 
+ */
+#clock,
+#battery,
+#network,
+#tray,
+#idle_inhibitor,
+#mpd {
+    padding: 0 10px;
+    margin: 5px;
+    color: #cccccc;
+    background: #000000;
+    border-radius: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+#window {
+    background: transparent;
+}
+
+/* 
+ * COLORS & ACCENTS 
+ * Everything is Monochrome (Silver, Grey, White)
+ */
+
+#clock {
+    color: #ffffff;
+    /* Pure White */
+    border-bottom: 2px solid #a9a9a9;
+    /* Silver */
+    border-radius: 4px;
+}
+
+#battery {
+    color: #dddddd;
+    border-bottom: 2px solid #555555;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #333333;
+    color: #ff3333;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network {
+    color: #dddddd;
+    border-bottom: 2px solid #333333;
+}
+
+#network.disconnected {
+    color: #ff3333;
+}
+
+#idle_inhibitor {
+    color: #a9a9a9;
+    border-bottom: 2px solid #a9a9a9;
+    border-radius: 20px;
+}
+
+#idle_inhibitor.activated {
+    background-color: #a9a9a9;
+    color: #000000;
+}
+
+#tray {
+    background-color: #000000;
+}
