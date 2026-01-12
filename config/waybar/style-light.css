@@ -1,0 +1,166 @@
+/* 
+ * Light Mode - Waybar
+ * "Corporate Clean" Design
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #000000;
+}
+
+tooltip {
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    color: #000000;
+}
+
+/* 
+ * MODULES 
+ */
+
+#workspaces {
+    background: #ffffff;
+    margin: 5px;
+    padding: 0px 5px;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    color: #000000;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 0px 3px;
+    border-radius: 2px;
+    color: #888888;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background-color: #000000;
+    /* Black Active */
+    color: #ffffff;
+    border-radius: 2px;
+    min-width: 50px;
+    font-weight: 900;
+}
+
+#workspaces button:hover {
+    background-color: #cccccc;
+    color: #000000;
+    border-radius: 2px;
+}
+
+/* 
+ * GROUPS
+ */
+#hardware,
+#controls {
+    background: #ffffff;
+    margin: 5px;
+    padding: 0px 5px;
+    border-radius: 4px;
+    border-bottom: 2px solid #000000;
+}
+
+/* 
+ * MODULES INSIDE GROUPS
+ */
+#hardware #cpu,
+#hardware #memory,
+#hardware #disk,
+#controls #pulseaudio,
+#controls #backlight {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 10px;
+    color: #000000;
+}
+
+/* 
+ * STANDALONE MODULES 
+ */
+#clock,
+#battery,
+#network,
+#tray,
+#idle_inhibitor,
+#mpd {
+    padding: 0 10px;
+    margin: 5px;
+    color: #000000;
+    background: #ffffff;
+    border-radius: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+#window {
+    background: transparent;
+    color: #000000;
+}
+
+/* 
+ * COLORS & ACCENTS 
+ */
+
+#clock {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    border-radius: 4px;
+}
+
+#battery {
+    color: #000000;
+    border-bottom: 2px solid #555555;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #000000;
+    border-bottom: 2px solid #00aa00;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #ffcccc;
+    color: #ff0000;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network {
+    color: #000000;
+    border-bottom: 2px solid #cccccc;
+}
+
+#network.disconnected {
+    color: #ff0000;
+}
+
+#idle_inhibitor {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    border-radius: 20px;
+}
+
+#idle_inhibitor.activated {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#tray {
+    background-color: #ffffff;
+}
