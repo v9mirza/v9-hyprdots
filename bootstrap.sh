@@ -83,6 +83,7 @@ done
 
 # Copy configs exactly
 rsync -av --delete config/ ~/.config/
+cp config/mimeapps.list ~/.config/mimeapps.list
 
 # Make scripts executable
 chmod +x ~/.config/hypr/scripts/*.sh 2>/dev/null || true
