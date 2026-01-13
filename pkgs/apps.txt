@@ -6,6 +6,7 @@ pavucontrol
 dunst
 libnotify
 btop
+cava
 wget
 curl
 openssh
@@ -23,4 +24,3 @@ starship
 nwg-look
 yazi
 ffmpegthumbnailer
-cava
