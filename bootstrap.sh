@@ -77,7 +77,7 @@ echo "== Installing configs =="
 mkdir -p ~/.config
 
 # Backup existing configs
-for d in hypr waybar dunst kitty wofi; do
+for d in hypr waybar dunst kitty wofi wlogout; do
   [[ -d ~/.config/$d ]] && mv ~/.config/$d ~/.config/$d.bak
 done
 
