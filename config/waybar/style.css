@@ -163,6 +163,22 @@ tooltip {
     color: #000000;
 }
 
+#custom-power {
+    background-color: #000000;
+    color: #ff3333;
+    padding: 0 15px;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: 1px solid #333333;
+    font-size: 16px;
+}
+
+#custom-power:hover {
+    background-color: #ff3333;
+    color: #000000;
+    box-shadow: 0 0 10px #ff3333;
+}
+
 #tray {
     background-color: #000000;
 }
