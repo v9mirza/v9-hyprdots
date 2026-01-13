@@ -18,8 +18,7 @@
         "group/controls",
         "group/hardware",
         "network",
-        "battery",
-        "custom/power"
+        "battery"
     ],
     "hyprland/window": {
         "format": "{}"
@@ -134,10 +133,5 @@
             "activated": "",
             "deactivated": ""
         }
-    },
-    "custom/power": {
-        "format": "",
-        "on-click": "wlogout",
-        "tooltip": false
     }
 }
