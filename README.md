@@ -50,7 +50,7 @@ chmod +x bootstrap.sh
 | :--- | :--- |
 | **Terminal** | `Super` + `Enter` |
 | **App Launcher** | `Super` + `D` |
-| **File Manager** | `Super` + `E` |
+| **File Manager (Yazi)** | `Super` + `E` |
 | **Close Window** | `Super` + `Q` |
 | **Lock Screen** | `Super` + `L` |
 | **Power Menu** | `Super` + `X` |
