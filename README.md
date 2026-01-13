@@ -54,6 +54,7 @@ chmod +x bootstrap.sh
 | **Close Window** | `Super` + `Q` |
 | **Lock Screen** | `Super` + `L` |
 | **Power Menu** | `Super` + `X` |
+| **System Monitor** | `Super` + `M` |
 | **Screenshot** | `Print` (Full) / `Shift` + `Print` (Region) |
 | **Reload Config** | `Super` + `Shift` + `C` |
 | **Exit Hyprland** | `Super` + `Shift` + `Q` |

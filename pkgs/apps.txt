@@ -7,6 +7,9 @@ dunst
 libnotify
 btop
 cava
+lazygit
+swappy
+
 wget
 curl
 openssh
