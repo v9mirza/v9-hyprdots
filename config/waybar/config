@@ -18,7 +18,8 @@
         "group/controls",
         "group/hardware",
         "network",
-        "battery"
+        "battery",
+        "custom/power"
     ],
     "hyprland/window": {
         "format": "{}"
@@ -133,5 +134,10 @@
             "activated": "",
             "deactivated": ""
         }
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "~/.config/hypr/scripts/power-menu.sh",
+        "tooltip": false
     }
 }
