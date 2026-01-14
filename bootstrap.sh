@@ -166,6 +166,26 @@ gtk-application-prefer-dark-theme=1
 EOF
 echo -e "${G}→ Applied Papirus-Dark Icons & Dark Theme${NC}"
 
+# GTK2 Legacy Support
+cat > ~/.gtkrc-2.0 <<EOF
+gtk-theme-name="Adwaita-dark"
+gtk-icon-theme-name="Papirus-Dark"
+gtk-font-name="Sans 11"
+gtk-cursor-theme-name="Bibata-Modern-Ice"
+gtk-cursor-theme-size=24
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-button-images=1
+gtk-menu-images=1
+gtk-enable-event-sounds=1
+gtk-enable-input-feedback-sounds=1
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintfull"
+gtk-xft-rgba="rgb"
+EOF
+echo -e "${G}→ Generated ~/.gtkrc-2.0${NC}"
+
 # --------------------------------------------------
 # Font Cache
 # --------------------------------------------------

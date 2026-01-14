@@ -11,6 +11,8 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # Apply Icon Theme
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+# Update Icon Cache (Best Effort)
+gtk-update-icon-cache /usr/share/icons/Papirus-Dark 2>/dev/null || true
 
 # Apply Cursor Theme
 gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Ice'
