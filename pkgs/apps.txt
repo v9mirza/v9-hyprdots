@@ -29,6 +29,8 @@ yazi
 ghostty
 ffmpegthumbnailer
 blueman
-pasystray
 udiskie
 flameshot
+bluez
+bluez-utils
+avahi

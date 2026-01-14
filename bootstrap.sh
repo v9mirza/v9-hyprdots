@@ -78,6 +78,12 @@ done
 sudo systemctl enable --now NetworkManager >/dev/null 2>&1 || true
 
 # --------------------------------------------------
+# Enable Bluetooth & Avahi
+# --------------------------------------------------
+sudo systemctl enable --now bluetooth >/dev/null 2>&1 || true
+sudo systemctl enable --now avahi-daemon >/dev/null 2>&1 || true
+
+# --------------------------------------------------
 # Install FetchX
 # --------------------------------------------------
 echo -e "${C}== Installing FetchX ==${NC}"
