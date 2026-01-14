@@ -18,8 +18,8 @@
         "memory",
         "backlight",
         "pulseaudio",
-        "network",
-        "bluetooth",
+        // "network",
+        // "bluetooth",
         "battery",
         "tray",
         "custom/power"
