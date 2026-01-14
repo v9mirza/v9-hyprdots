@@ -2,30 +2,49 @@
 ![Made with Arch](https://img.shields.io/badge/Made%20with-Arch-1793d1?style=for-the-badge&logo=arch-linux&logoColor=white)
 ![Style](https://img.shields.io/badge/Style-Steel%20Blue%20Monochrome-5f7c8a?style=for-the-badge)
 
-A disciplined, monochrome configuration for Hyprland.
-**"Blur the shell, not the work."**
+A minimal, monochrome configuration for Hyprland.
+Designed for focus with a **"Blur the shell, not the work"** philosophy.
 
 ---
 
-## 🎨 Identity
+## Identity
 
 *   **Palette**: Monochrome Dark (`#0f0f0f`)
 *   **Accent**: Steel Blue (`#5f7c8a`)
 *   **Radius**: Subtle (UI: 8px, Tiled: 0-4px)
 *   **Blur**: Enabled on Shell (Waybar, Wofi, Dunst)
 
-## 🥣 Tech Stack
+## Highlights
 
-| Component | Tool | Style |
+*   **Performance First**: Zero-bloat config optimized for speed.
+*   **Pixel Perfect**: Every border, gap, and radius is calculated (8px/4px).
+*   **Steel Blue**: A unified accent color `#5f7c8a` across all apps.
+*   **Ghostty Default**: GPU-accelerated terminal with V9 shaders.
+
+## Showcase
+
+<p align="center">
+  <img src="assets/home.png" width="45%" alt="Home Desktop">
+  <img src="assets/terminal.png" width="45%" alt="Terminal Workflow">
+</p>
+<p align="center">
+  <img src="assets/app-menu.png" width="45%" alt="App Launcher">
+  <img src="assets/power-menu.png" width="45%" alt="Power Menu">
+</p>
+
+
+## Tech Stack
+
+| Component | Tool | Description |
 | :--- | :--- | :--- |
 | **Window Manager** | Hyprland | Dwindle Layout, 4px Gaps |
 | **Bar** | Waybar | Floating, 85% Opacity, Blur |
-| **Terminal** | Kitty | Muted Palette, Blue Cursor |
+| **Terminal** | Ghostty | V9 Pro Config, 0.9 Opacity |
 | **Launcher** | Wofi | Blur, Steel Blue Selection |
 | **Notification** | Dunst | Dark Blur, Blue Border |
 | **Lock Screen** | Hyprlock | Minimalist Void |
 
-## 📂 Project Structure
+## Project Structure
 
 ```plaintext
 v9-hyprdots/
@@ -33,11 +52,11 @@ v9-hyprdots/
 ├── config/
 │   ├── hypr/          # Core Configs (general.conf using #5f7c8a)
 │   ├── waybar/        # CSS with 8px radius
-│   ├── kitty/         # Muted theme
+│   ├── ghostty/       # V9 Pro Terminal
 │   └── wofi/          # Blur enabled
 ```
 
-## 🚀 Installation
+## Installation
 
 ```bash
 git clone https://github.com/v9mirza/v9-hyprdots.git
@@ -46,7 +65,7 @@ chmod +x bootstrap.sh
 ./bootstrap.sh
 ```
 
-## ⌨️ Controls
+## Controls
 
 | Action | Keybinding |
 | :--- | :--- |
@@ -56,6 +75,12 @@ chmod +x bootstrap.sh
 | **Browser** | `Super` + `B` |
 | **System Monitor** | `Super` + `M` |
 | **Power Menu** | `Super` + `X` |
+| **Close Window** | `Super` + `Q` |
+| **Float Window** | `Super` + `F` |
+| **Clipboard** | `Super` + `V` |
+| **Screenshot (Full)** | `Print` |
+| **Screenshot (Crop)** | `Shift` + `Print` |
+| **Lock Screen** | `Super` + `L` |
 
 ---
 *V9 Baseline by v9mirza.*
