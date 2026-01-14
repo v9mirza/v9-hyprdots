@@ -13,8 +13,8 @@
 }
 
 window#waybar {
-    background: rgba(15, 15, 15, 0.85);
-    /* 85% opacity */
+    background: transparent;
+    /* Transparent for floating capsules */
     color: #d6d6d6;
 }
 
