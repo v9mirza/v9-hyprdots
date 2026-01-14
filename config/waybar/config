@@ -111,7 +111,7 @@
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "⚠ Disconnected",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "ghostty --class=v9-nmtui -e nmtui"
+        "on-click": "ghostty --class=v9-nmtui -e /home/mirza/.config/hypr/scripts/nmtui-wrapper.sh"
     },
     "custom/power": {
         "format": "",
