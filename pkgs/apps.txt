@@ -35,4 +35,8 @@ bluez
 bluez-utils
 avahi
 papirus-icon-theme
+xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk
+gnome-themes-extra
+gsettings-desktop-schemas
 
