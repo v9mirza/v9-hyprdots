@@ -34,3 +34,4 @@ flameshot
 bluez
 bluez-utils
 avahi
+

@@ -151,6 +151,21 @@ if ! grep -q "starship init bash" ~/.bashrc; then
 
 fi
 
+# --------------------------------------------------
+# GTK Theme Setup (No-Look)
+# --------------------------------------------------
+echo -e "${C}== Configuring GTK Theme ==${NC}"
+mkdir -p ~/.config/gtk-3.0
+cat > ~/.config/gtk-3.0/settings.ini <<EOF
+[Settings]
+gtk-theme-name=Adwaita-dark
+gtk-icon-theme-name=Papirus-Dark
+gtk-font-name=Sans 11
+gtk-cursor-theme-name=Bibata-Modern-Ice
+gtk-application-prefer-dark-theme=1
+EOF
+echo -e "${G}→ Applied Papirus-Dark Icons & Dark Theme${NC}"
+
 if ! grep -q "fetchx" ~/.bashrc; then
   cat <<EOF >> ~/.bashrc
 

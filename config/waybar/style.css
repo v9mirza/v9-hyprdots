@@ -54,11 +54,13 @@ window#waybar {
 #memory,
 #backlight,
 #network,
+#bluetooth,
+#pulseaudio,
 #idle_inhibitor,
 #custom-power,
 #tray {
     padding: 0 12px;
-    margin: 4px;
+    margin: 4px 6px;
     color: #d6d6d6;
     background: rgba(26, 26, 26, 0.6);
     /* Surface bg */
