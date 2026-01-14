@@ -13,13 +13,13 @@
         "clock"
     ],
     "modules-right": [
-        "idle_inhibitor",
         "cpu",
         "memory",
+        "idle_inhibitor",
         "backlight",
         "pulseaudio",
-        "battery",
         "tray",
+        "battery",
         "custom/power"
     ],
     "hyprland/window": {
@@ -103,6 +103,10 @@
                 ""
             ]
         }
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 12
     },
     "custom/power": {
         "format": "",
