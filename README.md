@@ -1,9 +1,7 @@
-# Hyprland: Dark Knight Edition
+# Hyprland Tactical Monochrome
 
 ![Made with Arch](https://img.shields.io/badge/Made%20with-Arch-1793d1?style=for-the-badge&logo=arch-linux&logoColor=white)
 ![Style](https://img.shields.io/badge/Style-Tactical%20Monochrome-000000?style=for-the-badge)
-
-> "It's not who I am underneath, but what I do that defines me."
 
 ![Home](assets/home.png)
 
