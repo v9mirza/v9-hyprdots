@@ -23,14 +23,12 @@ Designed for focus with a **"Blur the shell, not the work"** philosophy.
 
 ## Showcase
 
-<p align="center">
-  <img src="assets/home.png" width="45%" alt="Home Desktop">
-  <img src="assets/terminal.png" width="45%" alt="Terminal Workflow">
-</p>
-<p align="center">
-  <img src="assets/app-menu.png" width="45%" alt="App Launcher">
-  <img src="assets/power-menu.png" width="45%" alt="Power Menu">
-</p>
+| | |
+|:---:|:---:|
+| <img src="assets/home.png" width="100%"> | <img src="assets/terminal.png" width="100%"> |
+| **Home Desktop** | **Terminal Workflow** |
+| <img src="assets/app-menu.png" width="100%"> | <img src="assets/power-menu.png" width="100%"> |
+| **App Launcher** | **Power Menu** |
 
 
 ## Tech Stack
@@ -72,14 +70,12 @@ chmod +x bootstrap.sh
 | **Terminal** | `Super` + `Enter` |
 | **App Launcher** | `Super` + `D` |
 | **File Manager** | `Super` + `E` |
-| **Browser** | `Super` + `B` |
 | **System Monitor** | `Super` + `M` |
 | **Power Menu** | `Super` + `X` |
 | **Close Window** | `Super` + `Q` |
 | **Float Window** | `Super` + `F` |
 | **Clipboard** | `Super` + `V` |
 | **Screenshot (Full)** | `Print` |
-| **Screenshot (Crop)** | `Shift` + `Print` |
 | **Lock Screen** | `Super` + `L` |
 
 ---
