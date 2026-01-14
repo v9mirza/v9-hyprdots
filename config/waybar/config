@@ -105,8 +105,8 @@
         }
     },
     "tray": {
-        "icon-size": 18,
-        "spacing": 12
+        "icon-size": 16,
+        "spacing": 16
     },
     "custom/power": {
         "format": "",

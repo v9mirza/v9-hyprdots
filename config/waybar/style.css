@@ -60,7 +60,7 @@ window#waybar {
 #custom-power,
 #tray {
     padding: 0 12px;
-    margin: 4px 6px;
+    margin: 4px 8px;
     color: #d6d6d6;
     background: rgba(26, 26, 26, 0.6);
     /* Surface bg */

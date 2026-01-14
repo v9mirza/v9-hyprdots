@@ -16,6 +16,8 @@ gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Ice'
 gsettings set org.gnome.desktop.interface cursor-size 24
 
-# Cleanup
-# (Optional) Reload xsettings if running
-# killall -HUP xsettingsd 2>/dev/null || true
+# Restart Tray Applets to pick up new theme
+killall nm-applet blueman-applet udiskie 2>/dev/null || true
+nm-applet --indicator &
+blueman-applet &
+udiskie &
