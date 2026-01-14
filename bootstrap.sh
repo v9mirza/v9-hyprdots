@@ -166,6 +166,13 @@ gtk-application-prefer-dark-theme=1
 EOF
 echo -e "${G}→ Applied Papirus-Dark Icons & Dark Theme${NC}"
 
+# --------------------------------------------------
+# Font Cache
+# --------------------------------------------------
+echo -e "${C}== Updating Font Cache ==${NC}"
+fc-cache -fv >/dev/null 2>&1 || true
+echo -e "${G}→ Fonts updated${NC}"
+
 if ! grep -q "fetchx" ~/.bashrc; then
   cat <<EOF >> ~/.bashrc
 
