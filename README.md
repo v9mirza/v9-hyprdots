@@ -1,4 +1,4 @@
-# Hyprland: V9 Baseline
+# V9-hyprdots
 ![Made with Arch](https://img.shields.io/badge/Made%20with-Arch-1793d1?style=for-the-badge&logo=arch-linux&logoColor=white)
 ![Style](https://img.shields.io/badge/Style-Steel%20Blue%20Monochrome-5f7c8a?style=for-the-badge)
 
@@ -37,7 +37,7 @@ Designed for focus with a **"Blur the shell, not the work"** philosophy.
 | :--- | :--- | :--- |
 | **Window Manager** | Hyprland | Dwindle Layout, 4px Gaps |
 | **Bar** | Waybar | Floating, 85% Opacity, Blur |
-| **Terminal** | Ghostty | V9 Pro Config, 0.9 Opacity |
+| **Terminal** | Ghostty | V9-hyprdots Config, 0.9 Opacity |
 | **Launcher** | Wofi | Blur, Steel Blue Selection |
 | **Notification** | Dunst | Dark Blur, Blue Border |
 | **Lock Screen** | Hyprlock | Minimalist Void |
@@ -50,7 +50,7 @@ v9-hyprdots/
 ├── config/
 │   ├── hypr/          # Core Configs (general.conf using #5f7c8a)
 │   ├── waybar/        # CSS with 8px radius
-│   ├── ghostty/       # V9 Pro Terminal
+│   ├── ghostty/       # V9-hyprdots Terminal
 │   └── wofi/          # Blur enabled
 ```
 
@@ -79,4 +79,4 @@ chmod +x bootstrap.sh
 | **Lock Screen** | `Super` + `L` |
 
 ---
-*V9 Baseline by v9mirza.*
+*V9-hyprdots by v9mirza.*
