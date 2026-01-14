@@ -1,6 +1,6 @@
 /* 
- * V9 Theme - Waybar
- * "Tactical Monochrome" Design
+ * V9 Baseline - Waybar
+ * Accent: Steel Blue (#5f7c8a)
  */
 
 * {
@@ -13,170 +13,82 @@
 }
 
 window#waybar {
-    background: transparent;
-    color: #cccccc;
+    background: rgba(15, 15, 15, 0.85);
+    /* 85% opacity */
+    color: #d6d6d6;
 }
 
-tooltip {
-    background: #000000;
-    border: 1px solid #a9a9a9;
-    border-radius: 2px;
-}
-
-/* 
- * MODULES 
- */
-
+/* WORKSPACES */
 #workspaces {
-    background: #000000;
-    margin: 5px;
-    padding: 0px 5px;
-    border-radius: 4px;
-    border: 1px solid #222222;
+    background: transparent;
+    margin: 4px;
 }
 
 #workspaces button {
-    padding: 0px 5px;
-    margin: 0px 3px;
-    border-radius: 2px;
-    color: #666666;
+    padding: 0px 8px;
+    margin: 0px 2px;
+    border-radius: 8px;
+    /* Radius Rule: 8px UI */
+    color: #8a8a8a;
+    /* Muted */
     background: transparent;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease;
 }
 
 #workspaces button.active {
-    background-color: #a9a9a9;
-    /* Silver */
-    color: #000000;
-    border-radius: 2px;
-    min-width: 50px;
-    font-weight: 900;
+    background-color: #5f7c8a;
+    /* V9 Accent */
+    color: #ffffff;
+    min-width: 40px;
 }
 
 #workspaces button:hover {
-    background-color: #333333;
+    background-color: #2a2a2a;
     color: #ffffff;
-    border-radius: 2px;
 }
 
-/*
- * GROUPS
- * Unified pill style for groups
- */
-#hardware,
-#controls {
-    background: #000000;
-    margin: 5px;
-    padding: 0px 5px;
-    border-radius: 4px;
-    border-bottom: 2px solid #555555;
-    /* Gunmetal Underline */
-}
-
-/* 
- * GROUPED MODULES 
- */
-#hardware #cpu,
-#hardware #memory,
-#hardware #disk,
-#controls #pulseaudio,
-#controls #backlight {
-    background: transparent;
-    border: none;
-    margin: 0;
-    padding: 0 10px;
-    color: #cccccc;
-}
-
-/* 
- * STANDALONE MODULES 
- */
+/* GROUPS & MODULES via common class */
 #clock,
 #battery,
 #network,
-#tray,
 #idle_inhibitor,
-#mpd {
-    padding: 0 10px;
-    margin: 5px;
-    color: #cccccc;
-    background: #000000;
-    border-radius: 4px;
-    border-bottom: 2px solid transparent;
+#custom-power,
+#tray {
+    padding: 0 12px;
+    margin: 4px;
+    color: #d6d6d6;
+    background: rgba(26, 26, 26, 0.6);
+    /* Surface bg */
+    border-radius: 8px;
+    /* Radius Rule: 8px */
 }
 
-#window {
-    background: transparent;
-}
-
-/* 
- * COLORS & ACCENTS 
- * Everything is Monochrome (Silver, Grey, White)
- */
-
+/* ACCENTS */
 #clock {
     color: #ffffff;
-    /* Pure White */
-    border-bottom: 2px solid #a9a9a9;
-    /* Silver */
-    border-radius: 4px;
 }
 
-#battery {
-    color: #dddddd;
-    border-bottom: 2px solid #555555;
-}
-
-#battery.charging,
-#battery.plugged {
-    color: #ffffff;
-    border-bottom: 2px solid #ffffff;
+#battery.charging {
+    color: #5f7c8a;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #333333;
-    color: #ff3333;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    background-color: #5f7c8a;
+    color: #ffffff;
+    animation: blink 1s linear infinite;
 }
-
-#network {
-    color: #dddddd;
-    border-bottom: 2px solid #333333;
-}
-
-#network.disconnected {
-    color: #ff3333;
-}
-
-#idle_inhibitor {
-    color: #a9a9a9;
-    border-bottom: 2px solid #a9a9a9;
-    border-radius: 20px;
-}
-
-#idle_inhibitor.activated {
-    background-color: #a9a9a9;
-    color: #000000;
-}
-
-
 
 #custom-power {
-    background-color: #000000;
-    color: #ff3333;
-    padding: 0 15px;
-    margin-left: 10px;
-    border-radius: 20px;
-    border: 1px solid #333333;
-    font-size: 16px;
+    background-color: rgba(26, 26, 26, 0.6);
+    color: #d6d6d6;
 }
 
 #custom-power:hover {
-    background-color: #ff3333;
-    color: #000000;
-    box-shadow: 0 0 10px #ff3333;
+    background-color: #5f7c8a;
+    color: #ffffff;
+}
+
+#idle_inhibitor.activated {
+    background-color: #5f7c8a;
+    color: #ffffff;
 }

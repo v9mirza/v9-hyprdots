@@ -1,5 +1,5 @@
 # dunstrc
-# V9 Edition
+# V9 Baseline Edition
 
 [global]
     width = 320
@@ -7,8 +7,8 @@
     offset = 20x20
     origin = top-right
 
-    transparency = 0
-    corner_radius = 4
+    transparency = 10
+    corner_radius = 8
     
     # Text
     font = JetBrains Mono 11
@@ -17,13 +17,8 @@
     format = "<b>%s</b>\n%b"
     alignment = left
     vertical_alignment = center
-    show_age_threshold = 60
     ellipsize = middle
-    ignore_newline = no
-    stack_duplicates = true
-    hide_duplicate_count = false
-    show_indicators = yes
-
+    
     # Icons
     enable_recursive_icon_lookup = true
     icon_theme = Papirus-Dark
@@ -31,36 +26,30 @@
     min_icon_size = 32
     max_icon_size = 64
     
-    # Borders (Void Style - No Border)
-    frame_width = 0
-    frame_color = "#000000"
+    # Borders (V9 Accent)
+    frame_width = 2
+    frame_color = "#5f7c8a"
     separator_color = frame
     padding = 16
     horizontal_padding = 16
     
-    # Shadows (The Projection)
+    # Shadows
     enable_shadow = true
-    shadow_blur_radius = 20
+    shadow_blur_radius = 12
     shadow_color = "#000000"
     
-    # Mouse
-    mouse_left_click = close_current
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
-
 [urgency_low]
-    background = "#000000"
-    foreground = "#555555"
+    background = "#1a1a1ae6"
+    foreground = "#8a8a8a"
     timeout = 10
 
 [urgency_normal]
-    background = "#000000"
-    foreground = "#ffffff"
+    background = "#1a1a1ae6"
+    foreground = "#d6d6d6"
     timeout = 10
 
 [urgency_critical]
-    background = "#000000"
-    foreground = "#ff3333" # Muted Red Text
-    frame_color = "#ff3333" # Red Border only for Critical
-    frame_width = 2
+    background = "#1a1a1ae6"
+    foreground = "#ff6666" # Muted Red
+    frame_color = "#ff6666" 
     timeout = 0
