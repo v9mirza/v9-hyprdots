@@ -59,13 +59,13 @@ window#waybar {
 #idle_inhibitor,
 #custom-power,
 #tray {
-    padding: 0 12px;
-    margin: 4px 8px;
+    padding: 0 15px;
+    margin: 4px 5px;
     color: #d6d6d6;
     background: rgba(26, 26, 26, 0.6);
     /* Surface bg */
-    border-radius: 8px;
-    /* Radius Rule: 8px */
+    border-radius: 24px;
+    /* Radius Rule: 24px Capsule */
 }
 
 /* ACCENTS */

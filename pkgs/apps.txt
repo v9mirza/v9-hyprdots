@@ -34,4 +34,5 @@ flameshot
 bluez
 bluez-utils
 avahi
+papirus-icon-theme
 
