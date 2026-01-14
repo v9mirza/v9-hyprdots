@@ -13,10 +13,7 @@
         "clock"
     ],
     "modules-right": [
-        "tray",
-        "idle_inhibitor",
-        "group/controls",
-        "group/hardware",
+        "pulseaudio",
         "network",
         "battery",
         "custom/power"
@@ -30,40 +27,10 @@
         "on-click": "activate",
         "format": "{name}"
     },
-    "group/hardware": {
-        "orientation": "horizontal",
-        "modules": [
-            "cpu",
-            "memory",
-            "disk"
-        ]
-    },
-    "group/controls": {
-        "orientation": "horizontal",
-        "modules": [
-            "pulseaudio",
-            "backlight"
-        ]
-    },
-    "tray": {
-        "icon-size": 13,
-        "spacing": 10
-    },
     "clock": {
         "interval": 1,
-        "format": "{:%H:%M | %d/%m}",
+        "format": "{:%I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
-    },
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": [
-            "",
-            "",
-            ""
-        ],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
-        "min-length": 6
     },
     "battery": {
         "states": {
@@ -106,34 +73,12 @@
         }
     },
     "network": {
-        "format-wifi": "  {signalStrength}%",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-wifi": "",
+        "format-ethernet": "",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected ⚠",
+        "format-disconnected": "⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "cpu": {
-        "interval": 10,
-        "format": " {usage}%",
-        "max-length": 10
-    },
-    "memory": {
-        "interval": 30,
-        "format": " {}%",
-        "max-length": 10
-    },
-    "disk": {
-        "interval": 30,
-        "format": " {percentage_used}%",
-        "path": "/"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
     },
     "custom/power": {
         "format": "",
