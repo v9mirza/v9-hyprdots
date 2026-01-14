@@ -28,3 +28,7 @@ nwg-look
 yazi
 ghostty
 ffmpegthumbnailer
+blueman
+pasystray
+udiskie
+flameshot
