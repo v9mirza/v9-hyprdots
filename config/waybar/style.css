@@ -50,6 +50,9 @@ window#waybar {
 /* GROUPS & MODULES via common class */
 #clock,
 #battery,
+#cpu,
+#memory,
+#backlight,
 #network,
 #idle_inhibitor,
 #custom-power,
