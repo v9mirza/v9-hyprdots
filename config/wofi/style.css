@@ -8,20 +8,20 @@
 
 window {
     margin: 0px;
-    border: 2px solid #5f7c8a;
+    border: 2px solid #6f7a80;
     /* Accent Border */
-    background-color: rgba(17, 19, 23, 1.0);
+    background-color: rgba(36, 36, 36, 1.0);
     /* Transparent */
-    border-radius: 6px;
+    border-radius: 10px;
 }
 
 #input {
     margin: 10px;
-    border: 1px solid #1b1f24;
-    /* Wet Asphalt Border */
-    border-radius: 6px;
-    background-color: #111317;
-    color: #d6d6d6;
+    border: 1px solid #242424;
+    /* Graphite Border */
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    color: #dcdcdc;
     padding: 12px;
 }
 
@@ -42,7 +42,7 @@ window {
 }
 
 #entry:selected {
-    background-color: #5f7c8a;
+    background-color: #6f7a80;
     /* V9 Accent */
     color: #ffffff;
 }

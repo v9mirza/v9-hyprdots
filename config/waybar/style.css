@@ -1,6 +1,6 @@
 /* 
  * V9-hyprdots - Waybar
- * Accent: DARK KNIGHT (Tactical Steel Blue #5f7c8a)
+ * Accent: CHARCOAL (Muted Cool Gray #6f7a80)
  */
 
 * {
@@ -13,8 +13,8 @@
 }
 
 window#waybar {
-    background: rgba(17, 19, 23, 0.95);
-    color: #d6d6d6;
+    background: rgba(26, 26, 26, 0.95);
+    color: #dcdcdc;
     padding: 0 10px;
 }
 
@@ -36,14 +36,14 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: #5f7c8a;
+    background-color: #6f7a80;
     /* V9 Accent */
     color: #ffffff;
     min-width: 40px;
 }
 
 #workspaces button:hover {
-    background-color: #8a8a8a;
+    background-color: #9a9a9a;
     color: #ffffff;
 }
 
@@ -62,7 +62,7 @@ window#waybar {
 #tray {
     padding: 0 12px;
     margin: 0;
-    color: #d6d6d6;
+    color: #dcdcdc;
     background: transparent;
     border-radius: 6px;
 }
@@ -73,27 +73,27 @@ window#waybar {
 }
 
 #battery.charging {
-    color: #5f7c8a;
+    color: #6f7a80;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #7a1f1f;
+    background-color: #6b2a2a;
     color: #ffffff;
     animation: blink 1s linear infinite;
 }
 
 #custom-power {
     background-color: transparent;
-    color: #d6d6d6;
+    color: #dcdcdc;
 }
 
 #custom-power:hover {
-    background-color: #5f7c8a;
+    background-color: #6f7a80;
     color: #ffffff;
 }
 
 #idle_inhibitor.activated {
-    background-color: #5f7c8a;
+    background-color: #6f7a80;
     color: #ffffff;
 }
 
