@@ -49,6 +49,7 @@ window#waybar {
 
 /* GROUPS & MODULES via common class */
 #clock,
+#mpris,
 #battery,
 #cpu,
 #memory,
@@ -94,4 +95,9 @@ window#waybar {
 #idle_inhibitor.activated {
     background-color: #5f7c8a;
     color: #ffffff;
+}
+
+#mpris {
+    margin-left: 20px;
+    color: #d6d6d6;
 }
