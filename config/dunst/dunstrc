@@ -27,10 +27,10 @@
     max_icon_size = 64
     
     # Borders (V9 Accent)
-    frame_width = 1
-    frame_color = "#5eead4"
+    frame_width = 2
+    frame_color = "#38f8e0"
     separator_color = frame
-    corner_radius = 8
+    corner_radius = 12
     padding = 16
     horizontal_padding = 16
     
@@ -40,17 +40,17 @@
     shadow_color = "#000000"
     
 [urgency_low]
-    background = "#1d2330"
+    background = "#273244"
     foreground = "#8a8a8a"
     timeout = 10
 
 [urgency_normal]
-    background = "#1d2330"
+    background = "#273244"
     foreground = "#d6d6d6"
     timeout = 10
 
 [urgency_critical]
-    background = "#1d2330"
+    background = "#273244"
     foreground = "#ff6666" # Muted Red
     frame_color = "#ff6666" 
     timeout = 0
