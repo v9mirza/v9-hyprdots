@@ -13,15 +13,14 @@
         "clock"
     ],
     "modules-right": [
-        "tray",
         "idle_inhibitor",
         "cpu",
         "memory",
+        "backlight",
         "pulseaudio",
-        "custom/power",
+        "tray",
         "battery",
-        "network",
-        "bluetooth"
+        "custom/power"
     ],
     "hyprland/window": {
         "format": "{}"
