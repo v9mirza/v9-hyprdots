@@ -1,6 +1,6 @@
 /* 
  * V9-hyprdots - Waybar
- * Accent: Dark Steel Cyber (Steel Blue #5f7c8a)
+ * Accent: STEEL (Muted Steel Blue #7e9cd8)
  */
 
 * {
@@ -13,8 +13,8 @@
 }
 
 window#waybar {
-    background: rgba(11, 14, 17, 0.95);
-    color: #dce1e6;
+    background: rgba(31, 31, 40, 0.95);
+    color: #dcd7ba;
     padding: 0 10px;
 }
 
@@ -36,14 +36,14 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: #5f7c8a;
+    background-color: #7e9cd8;
     /* V9 Accent */
     color: #ffffff;
     min-width: 40px;
 }
 
 #workspaces button:hover {
-    background-color: #8b9199;
+    background-color: #9e9b86;
     color: #ffffff;
 }
 
@@ -62,7 +62,7 @@ window#waybar {
 #tray {
     padding: 0 12px;
     margin: 0;
-    color: #dce1e6;
+    color: #dcd7ba;
     background: transparent;
     border-radius: 6px;
 }
@@ -73,27 +73,27 @@ window#waybar {
 }
 
 #battery.charging {
-    color: #5f7c8a;
+    color: #7e9cd8;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #7a2f2f;
+    background-color: #c34043;
     color: #ffffff;
     animation: blink 1s linear infinite;
 }
 
 #custom-power {
     background-color: transparent;
-    color: #dce1e6;
+    color: #dcd7ba;
 }
 
 #custom-power:hover {
-    background-color: #5f7c8a;
+    background-color: #7e9cd8;
     color: #ffffff;
 }
 
 #idle_inhibitor.activated {
-    background-color: #5f7c8a;
+    background-color: #7e9cd8;
     color: #ffffff;
 }
 
