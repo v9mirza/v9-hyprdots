@@ -1,6 +1,6 @@
 /* 
  * V9-hyprdots - Waybar
- * Accent: Steel Blue (#5f7c8a)
+ * Accent: Tokyo Blue (#7aa2f7)
  */
 
 * {
@@ -13,7 +13,7 @@
 }
 
 window#waybar {
-    background: rgba(26, 26, 26, 0.95);
+    background: rgba(26, 27, 38, 0.95);
     color: #d6d6d6;
     padding: 0 10px;
 }
@@ -36,7 +36,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: #5f7c8a;
+    background-color: #7aa2f7;
     /* V9 Accent */
     color: #ffffff;
     min-width: 40px;
@@ -73,11 +73,11 @@ window#waybar {
 }
 
 #battery.charging {
-    color: #5f7c8a;
+    color: #7aa2f7;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #5f7c8a;
+    background-color: #7aa2f7;
     color: #ffffff;
     animation: blink 1s linear infinite;
 }
@@ -88,12 +88,12 @@ window#waybar {
 }
 
 #custom-power:hover {
-    background-color: #5f7c8a;
+    background-color: #7aa2f7;
     color: #ffffff;
 }
 
 #idle_inhibitor.activated {
-    background-color: #5f7c8a;
+    background-color: #7aa2f7;
     color: #ffffff;
 }
 
