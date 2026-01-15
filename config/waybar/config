@@ -7,14 +7,14 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "mpris"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
         "idle_inhibitor",
-        "mpris",
         "cpu",
         "memory",
         "backlight",
