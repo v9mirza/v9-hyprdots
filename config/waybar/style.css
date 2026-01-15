@@ -1,11 +1,11 @@
 /* 
  * V9-hyprdots - Waybar
- * Accent: Modern Cyber (Aqua #38f8e0 / Soft Blue #60a5fa)
+ * Accent: Dark Steel Cyber (Steel Blue #5f7c8a)
  */
 
 * {
     border: none;
-    border-radius: 12px;
+    border-radius: 6px;
     font-family: "JetBrains Mono Nerd Font";
     font-weight: bold;
     font-size: 14px;
@@ -13,8 +13,8 @@
 }
 
 window#waybar {
-    background: rgba(31, 41, 55, 0.90);
-    color: #e5e7eb;
+    background: rgba(11, 14, 17, 0.95);
+    color: #dce1e6;
     padding: 0 10px;
 }
 
@@ -36,14 +36,14 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: #38f8e0;
+    background-color: #5f7c8a;
     /* V9 Accent */
     color: #ffffff;
     min-width: 40px;
 }
 
 #workspaces button:hover {
-    background-color: #60a5fa;
+    background-color: #8b9199;
     color: #ffffff;
 }
 
@@ -62,9 +62,9 @@ window#waybar {
 #tray {
     padding: 0 12px;
     margin: 0;
-    color: #e5e7eb;
+    color: #dce1e6;
     background: transparent;
-    border-radius: 12px;
+    border-radius: 6px;
 }
 
 /* ACCENTS */
@@ -73,27 +73,27 @@ window#waybar {
 }
 
 #battery.charging {
-    color: #38f8e0;
+    color: #5f7c8a;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #8f2d2d;
+    background-color: #7a2f2f;
     color: #ffffff;
     animation: blink 1s linear infinite;
 }
 
 #custom-power {
     background-color: transparent;
-    color: #e5e7eb;
+    color: #dce1e6;
 }
 
 #custom-power:hover {
-    background-color: #60a5fa;
+    background-color: #5f7c8a;
     color: #ffffff;
 }
 
 #idle_inhibitor.activated {
-    background-color: #38f8e0;
+    background-color: #5f7c8a;
     color: #ffffff;
 }
 

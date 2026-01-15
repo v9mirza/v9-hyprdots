@@ -8,19 +8,19 @@
 
 window {
     margin: 0px;
-    border: 2px solid #38f8e0;
+    border: 2px solid #5f7c8a;
     /* Accent Border */
-    background-color: rgba(31, 41, 55, 0.95);
+    background-color: rgba(21, 25, 31, 1.0);
     /* Transparent */
-    border-radius: 12px;
+    border-radius: 8px;
 }
 
 #input {
     margin: 10px;
     border: none;
     border-radius: 8px;
-    background-color: #1f2937;
-    color: #e5e7eb;
+    background-color: #1f252d;
+    color: #dce1e6;
     padding: 10px;
 }
 
@@ -32,11 +32,11 @@ window {
     background-color: transparent;
     color: #8a8a8a;
     transition: all 0.2s ease;
-    border-radius: 12px;
+    border-radius: 8px;
 }
 
 #entry:selected {
-    background-color: #38f8e0;
+    background-color: #5f7c8a;
     /* V9 Accent */
     color: #ffffff;
 }

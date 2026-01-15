@@ -11,6 +11,7 @@ libnotify
 cliphist
 brightnessctl
 pamixer
+ttf-ibm-plex
 ttf-inter
 ttf-jetbrains-mono-nerd
 ttf-nerd-fonts-symbols
