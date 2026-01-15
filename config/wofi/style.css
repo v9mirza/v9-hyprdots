@@ -8,9 +8,9 @@
 
 window {
     margin: 0px;
-    border: 2px solid #7aa2f7;
+    border: 2px solid #5eead4;
     /* Accent Border */
-    background-color: rgba(26, 27, 38, 0.9);
+    background-color: rgba(22, 27, 34, 0.95);
     /* Transparent */
     border-radius: 8px;
 }
@@ -35,7 +35,7 @@ window {
 }
 
 #entry:selected {
-    background-color: #7aa2f7;
+    background-color: #5eead4;
     /* V9 Accent */
     color: #ffffff;
 }

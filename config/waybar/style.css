@@ -1,6 +1,6 @@
 /* 
  * V9-hyprdots - Waybar
- * Accent: Tokyo Blue (#7aa2f7)
+ * Accent: Neo-Cyber Noir (Mint #5eead4 / Violet #8b7cf6)
  */
 
 * {
@@ -13,8 +13,8 @@
 }
 
 window#waybar {
-    background: rgba(26, 27, 38, 0.95);
-    color: #d6d6d6;
+    background: rgba(22, 27, 34, 0.95);
+    color: #e8ebf0;
     padding: 0 10px;
 }
 
@@ -36,14 +36,14 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: #7aa2f7;
+    background-color: #5eead4;
     /* V9 Accent */
     color: #ffffff;
     min-width: 40px;
 }
 
 #workspaces button:hover {
-    background-color: #2a2a2a;
+    background-color: #8b7cf6;
     color: #ffffff;
 }
 
@@ -62,7 +62,7 @@ window#waybar {
 #tray {
     padding: 0 12px;
     margin: 0;
-    color: #d6d6d6;
+    color: #e8ebf0;
     background: transparent;
     border-radius: 0;
 }
@@ -73,27 +73,27 @@ window#waybar {
 }
 
 #battery.charging {
-    color: #7aa2f7;
+    color: #5eead4;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #7aa2f7;
+    background-color: #8f2d2d;
     color: #ffffff;
     animation: blink 1s linear infinite;
 }
 
 #custom-power {
     background-color: transparent;
-    color: #d6d6d6;
+    color: #e8ebf0;
 }
 
 #custom-power:hover {
-    background-color: #7aa2f7;
+    background-color: #8b7cf6;
     color: #ffffff;
 }
 
 #idle_inhibitor.activated {
-    background-color: #7aa2f7;
+    background-color: #5eead4;
     color: #ffffff;
 }
 
