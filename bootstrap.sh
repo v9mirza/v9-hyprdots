@@ -197,7 +197,7 @@ if ! grep -q "fetchx" ~/.bashrc; then
   cat <<EOF >> ~/.bashrc
 
 # Auto-run fetchx
-if [[ \$SHLVL -eq 1 ]] && command -v fetchx >/dev/null; then
+if command -v fetchx >/dev/null; then
   fetchx
 fi
 EOF
