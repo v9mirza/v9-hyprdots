@@ -28,7 +28,7 @@
     
     # Borders (V9 Accent)
     frame_width = 1
-    frame_color = "#7e9cd8"
+    frame_color = "#5f7c8a"
     separator_color = frame
     corner_radius = 6
     padding = 16
@@ -40,17 +40,17 @@
     shadow_color = "#000000"
     
 [urgency_low]
-    background = "#363646"
+    background = "#1b1f24"
     foreground = "#8a8a8a"
     timeout = 10
 
 [urgency_normal]
-    background = "#363646"
+    background = "#1b1f24"
     foreground = "#d6d6d6"
     timeout = 10
 
 [urgency_critical]
-    background = "#363646"
+    background = "#1b1f24"
     foreground = "#ff6666" # Muted Red
     frame_color = "#ff6666" 
     timeout = 0

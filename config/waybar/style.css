@@ -1,6 +1,6 @@
 /* 
  * V9-hyprdots - Waybar
- * Accent: STEEL (Muted Steel Blue #7e9cd8)
+ * Accent: DARK KNIGHT (Tactical Steel Blue #5f7c8a)
  */
 
 * {
@@ -13,8 +13,8 @@
 }
 
 window#waybar {
-    background: rgba(31, 31, 40, 0.95);
-    color: #dcd7ba;
+    background: rgba(17, 19, 23, 0.95);
+    color: #d6d6d6;
     padding: 0 10px;
 }
 
@@ -36,14 +36,14 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: #7e9cd8;
+    background-color: #5f7c8a;
     /* V9 Accent */
     color: #ffffff;
     min-width: 40px;
 }
 
 #workspaces button:hover {
-    background-color: #9e9b86;
+    background-color: #8a8a8a;
     color: #ffffff;
 }
 
@@ -62,7 +62,7 @@ window#waybar {
 #tray {
     padding: 0 12px;
     margin: 0;
-    color: #dcd7ba;
+    color: #d6d6d6;
     background: transparent;
     border-radius: 6px;
 }
@@ -73,27 +73,27 @@ window#waybar {
 }
 
 #battery.charging {
-    color: #7e9cd8;
+    color: #5f7c8a;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #c34043;
+    background-color: #7a1f1f;
     color: #ffffff;
     animation: blink 1s linear infinite;
 }
 
 #custom-power {
     background-color: transparent;
-    color: #dcd7ba;
+    color: #d6d6d6;
 }
 
 #custom-power:hover {
-    background-color: #7e9cd8;
+    background-color: #5f7c8a;
     color: #ffffff;
 }
 
 #idle_inhibitor.activated {
-    background-color: #7e9cd8;
+    background-color: #5f7c8a;
     color: #ffffff;
 }
 
