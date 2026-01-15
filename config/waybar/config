@@ -13,12 +13,12 @@
         "clock"
     ],
     "modules-right": [
+        "tray",
+        "idle_inhibitor",
         "cpu",
         "memory",
-        "idle_inhibitor",
         "backlight",
         "pulseaudio",
-        "tray",
         "battery",
         "custom/power"
     ],
