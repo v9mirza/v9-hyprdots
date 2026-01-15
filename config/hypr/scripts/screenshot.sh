@@ -14,6 +14,10 @@ if [ "$1" == "full" ]; then
 elif [ "$1" == "region" ]; then
     # Capture region -> Swappy for editing -> Save
     grim -g "$(slurp)" - | swappy -f -
+    
+    # Play sound
+    paplay /usr/share/sounds/freedesktop/stereo/camera-shutter.oga 2>/dev/null &
+    notify-send "Screenshot Saved" "Region captured"
 else
     echo "Usage: $0 [full|region]"
     exit 1

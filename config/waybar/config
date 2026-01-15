@@ -14,6 +14,8 @@
     ],
     "modules-right": [
         "idle_inhibitor",
+        "mpris",
+        "custom/weather",
         "cpu",
         "memory",
         "backlight",
@@ -46,12 +48,14 @@
     "cpu": {
         "interval": 10,
         "format": " {usage}%",
-        "max-length": 10
+        "max-length": 10,
+        "on-click": "kitty -e btop"
     },
     "memory": {
         "interval": 30,
         "format": " {}%",
-        "max-length": 10
+        "max-length": 10,
+        "on-click": "kitty -e btop"
     },
     "backlight": {
         "format": "{icon} {percent}%",
@@ -129,5 +133,23 @@
         "format": "",
         "on-click": "~/.config/hypr/scripts/power-menu.sh",
         "tooltip": false
+    },
+    "mpris": {
+        "format": "{player_icon} {title}",
+        "format-paused": "{status_icon} <i>{title}</i>",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
+        "max-length": 30
+    },
+    "custom/weather": {
+        "format": "{}",
+        "interval": 3600,
+        "exec": "~/.config/waybar/scripts/weather.sh",
+        "return-type": "json"
     }
 }

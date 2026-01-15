@@ -12,6 +12,9 @@ swappy
 
 wget
 curl
+jq
+playerctl
+libcanberra
 openssh
 nmap
 zip

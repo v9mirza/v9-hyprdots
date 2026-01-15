@@ -8,12 +8,11 @@
 
 window {
     margin: 0px;
-    border: 2px solid #2a2a2a;
-    /* Inactive border color */
-    background-color: rgba(15, 15, 15, 0.90);
-    /* Blur base */
+    border: 2px solid #5f7c8a;
+    /* Accent Border */
+    background-color: rgba(15, 15, 15, 0.6);
+    /* Transparent */
     border-radius: 8px;
-    /* UI Radius 8-10px */
 }
 
 #input {
@@ -32,6 +31,7 @@ window {
     border: none;
     background-color: transparent;
     color: #8a8a8a;
+    transition: all 0.2s ease;
 }
 
 #entry:selected {
