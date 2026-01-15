@@ -15,7 +15,6 @@
     "modules-right": [
         "idle_inhibitor",
         "mpris",
-        "custom/weather",
         "cpu",
         "memory",
         "backlight",
@@ -145,11 +144,5 @@
             "paused": "⏸"
         },
         "max-length": 30
-    },
-    "custom/weather": {
-        "format": "{}",
-        "interval": 3600,
-        "exec": "~/.config/waybar/scripts/weather.sh",
-        "return-type": "json"
     }
 }
