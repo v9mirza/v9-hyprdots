@@ -16,14 +16,14 @@ window-padding-x = 12
 window-padding-y = 12
 window-padding-balance = true
 # 90% opacity for the "Void" look
-background-opacity = 0.9
+background-opacity = 0.94
 # Allow Blur from Hyprland
 window-theme = ghostty
 
 # --- Cursor (Tactical Block) ---
 cursor-style = block
 cursor-style-blink = false
-cursor-color = #5f7c8a
+cursor-color = #6f7a80
 cursor-text = #ffffff
 
 # --- Mouse & Selection ---
@@ -40,7 +40,7 @@ clipboard-write = allow
 # --- Colors (V9 Exact) ---
 background = #0f0f0f
 foreground = #d6d6d6
-selection-background = #5f7c8a
+selection-background = #6f7a80
 selection-foreground = #ffffff
 
 # Black
@@ -56,8 +56,8 @@ palette = 10=#88aa77
 palette = 3=#ddcc77
 palette = 11=#ddcc77
 # Blue (Accent)
-palette = 4=#5f7c8a
-palette = 12=#5f7c8a
+palette = 4=#6f7a80
+palette = 12=#6f7a80
 # Magenta
 palette = 5=#aa88aa
 palette = 13=#aa88aa
