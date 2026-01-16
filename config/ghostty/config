@@ -23,7 +23,7 @@ window-theme = ghostty
 # --- Cursor (Tactical Block) ---
 cursor-style = block
 cursor-style-blink = false
-cursor-color = #5f7c8a
+cursor-color = #6f8896
 cursor-text = #ffffff
 
 # --- Mouse & Selection ---
@@ -37,15 +37,15 @@ shell-integration = zsh
 confirm-close-surface = false
 clipboard-write = allow
 
-# --- Colors (V9 Exact) ---
-background = #0f0f0f
+# --- Colors (V9 Exact / Charcoal) ---
+background = #1b1e21
 foreground = #d6d6d6
-selection-background = #5f7c8a
-selection-foreground = #ffffff
+selection-background = #6f8896
+selection-foreground = #d6d6d6
 
 # Black
-palette = 0=#1a1a1a
-palette = 8=#2a2a2a
+palette = 0=#23272c
+palette = 8=#9a9a9a
 # Red
 palette = 1=#cc6666
 palette = 9=#cc6666
@@ -56,8 +56,8 @@ palette = 10=#88aa77
 palette = 3=#ddcc77
 palette = 11=#ddcc77
 # Blue (Accent)
-palette = 4=#5f7c8a
-palette = 12=#5f7c8a
+palette = 4=#6f8896
+palette = 12=#6f8896
 # Magenta
 palette = 5=#aa88aa
 palette = 13=#aa88aa
