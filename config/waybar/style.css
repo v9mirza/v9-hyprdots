@@ -1,11 +1,11 @@
 /* 
  * V9-hyprdots - Waybar
- * Accent: CHARCOAL (Muted Blue-Gray #6f8896)
+ * Accent: CHARCOAL (Muted Cool Gray #6f7a80)
  */
 
 * {
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     font-family: "JetBrains Mono Nerd Font";
     font-weight: bold;
     font-size: 14px;
@@ -13,9 +13,8 @@
 }
 
 window#waybar {
-    background: rgba(27, 30, 33, 0.95);
-    /* #1b1e21 @ 95% */
-    color: #d6d6d6;
+    background: rgba(26, 26, 26, 0.95);
+    color: #dcdcdc;
     padding: 0 10px;
 }
 
@@ -28,24 +27,24 @@ window#waybar {
 #workspaces button {
     padding: 0px 8px;
     margin: 0px 2px;
-    border-radius: 4px;
-    color: #9a9a9a;
+    border-radius: 0px;
+    /* Radius Rule: 8px UI */
+    color: #8a8a8a;
     /* Muted */
     background: transparent;
     transition: all 0.2s ease;
-    border-bottom: 2px solid transparent;
 }
 
 #workspaces button.active {
-    background-color: transparent;
-    border-bottom: 2px solid #6f8896;
-    /* Accent Underline */
-    color: #d6d6d6;
+    background-color: #6f7a80;
+    /* V9 Accent */
+    color: #ffffff;
     min-width: 40px;
 }
 
 #workspaces button:hover {
-    color: #d6d6d6;
+    background-color: #9a9a9a;
+    color: #ffffff;
 }
 
 /* GROUPS & MODULES via common class */
@@ -63,41 +62,42 @@ window#waybar {
 #tray {
     padding: 0 12px;
     margin: 0;
-    color: #d6d6d6;
+    color: #dcdcdc;
     background: transparent;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 /* ACCENTS */
 #clock {
-    color: #d6d6d6;
+    color: #ffffff;
 }
 
 #battery.charging {
-    color: #6f8896;
+    color: #6f7a80;
 }
 
 #battery.critical:not(.charging) {
-    background-color: transparent;
-    color: #ff6666;
-    /* Keep alert color but remove bg blockiness if desired, or keep as is. Prompt says 'Muted Blue-Gray' is the ONLY accent. I will stick to text color for critical to be safe.*/
+    background-color: #6b2a2a;
+    color: #ffffff;
     animation: blink 1s linear infinite;
 }
 
 #custom-power {
     background-color: transparent;
-    color: #d6d6d6;
+    color: #dcdcdc;
 }
 
 #custom-power:hover {
-    color: #6f8896;
+    background-color: #6f7a80;
+    color: #ffffff;
 }
 
 #idle_inhibitor.activated {
-    color: #6f8896;
+    background-color: #6f7a80;
+    color: #ffffff;
 }
 
 #mpris {
     margin-left: 20px;
-    color: #9a9a9a;
+    color: #d6d6d6;
 }
