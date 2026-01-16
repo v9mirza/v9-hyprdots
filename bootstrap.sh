@@ -1,138 +1,150 @@
 #!/bin/bash
-# v9-hyprdots bootstrap (simple, best-effort, deterministic)
+# v9-hyprdots bootstrap (Modern Edition)
+# "Tactical, Fast, Deterministic"
 
 set -e
 
-# Colors
+# --- Palette ---
+RESET='\033[0m'
+BOLD='\033[1m'
+DIM='\033[2m'
 R='\033[0;31m'
 G='\033[0;32m'
+B='\033[0;34m'
 C='\033[0;36m'
-NC='\033[0m' # No Color
+W='\033[1;37m'
 
-echo -e "${C}"
-cat << "EOF"
-██╗   ██╗ █████╗     ██╗  ██╗██╗   ██╗██████╗ ██████╗ ██████╗  ██████╗ ████████╗███████╗
-██║   ██║██╔══██╗    ██║  ██║╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝
-██║   ██║╚██████║    ███████║ ╚████╔╝ ██████╔╝██████╔╝██║  ██║██║   ██║   ██║   ███████╗
-╚██╗ ██╔╝ ╚═══██║    ██╔══██║  ╚██╔╝  ██╔═══╝ ██╔══██╗██║  ██║██║   ██║   ██║   ╚════██║
- ╚████╔╝  ██████║    ██║  ██║   ██║   ██║     ██║  ██║██████╔╝╚██████╔╝   ██║   ███████║
-  ╚═══╝   ╚═════╝    ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝  ╚═╝╚═════╝  ╚═════╝    ╚═╝   ╚══════╝
-                                  
+# --- Helpers ---
+print_banner() {
+    clear
+    echo -e "${DIM}----------------------------------------------------------------${RESET}"
+    echo -e "${B}"
+    cat << "EOF"
+ ██╗   ██╗ █████╗     ██╗  ██╗██╗   ██╗██████╗ ██████╗ ██████╗  ██████╗ ████████╗███████╗
+ ██║   ██║██╔══██╗    ██║  ██║╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝
+ ██║   ██║╚██████║    ███████║ ╚████╔╝ ██████╔╝██████╔╝██║  ██║██║   ██║   ██║   ███████╗
+ ╚██╗ ██╔╝ ╚═══██║    ██╔══██║  ╚██╔╝  ██╔═══╝ ██╔══██╗██║  ██║██║   ██║   ██║   ╚════██║
+  ╚████╔╝  ██████║    ██║  ██║   ██║   ██║     ██║  ██║██████╔╝╚██████╔╝   ██║   ███████║
+   ╚═══╝   ╚═════╝    ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝  ╚═╝╚═════╝  ╚═════╝    ╚═╝   ╚══════╝
 EOF
-echo -e "${NC}"
-echo -e "${C}== v9-hyprdots bootstrap ==${NC}"
+    echo -e "${RESET}"
+    echo -e "${DIM}----------------------------------------------------------------${RESET}"
+    echo -e "${C} :: v9-hyprdots Bootstrap :: ${DIM}v2.0${RESET}"
+    echo
+}
 
-# --------------------------------------------------
-# Always run from repo root
-# --------------------------------------------------
+step() {
+    echo -e "${B}::${RESET} ${W}$1${RESET}..."
+}
+
+success() {
+    echo -e "   ${G}✔${RESET} $1"
+}
+
+error() {
+    echo -e "   ${R}✖${RESET} $1"
+}
+
+warn() {
+    echo -e "   ${C}‼${RESET} $1"
+}
+
+# --- Checks ---
+print_banner
+
+# Root Check
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
-# --------------------------------------------------
-# Arch check
-# --------------------------------------------------
-[[ -f /etc/arch-release ]] || {
-  echo -e "${R}❌ Arch Linux only${NC}"
-  exit 1
-}
+# Arch Check
+if [[ ! -f /etc/arch-release ]]; then
+    error "This script is designed for Arch Linux only."
+    exit 1
+fi
 
-# --------------------------------------------------
-# Network check
-# --------------------------------------------------
-ping -c 1 archlinux.org >/dev/null || {
-  echo -e "${R}❌ No internet${NC}"
-  exit 1
-}
+# Network Check
+if ! ping -c 1 archlinux.org &> /dev/null; then
+    error "No internet connection detected."
+    exit 1
+fi
 
-# --------------------------------------------------
-# System update
-# --------------------------------------------------
-echo -e "${C}== System Update ==${NC}"
-sudo pacman -S --noconfirm archlinux-keyring
-sudo pacman -Syu --noconfirm
+# --- 1. System Update ---
+step "Updating System"
+sudo pacman -S --noconfirm archlinux-keyring &> /dev/null
+if sudo pacman -Syu --noconfirm &> /dev/null; then
+    success "System Updated"
+else
+    error "Update Failed"
+    exit 1
+fi
 
-# --------------------------------------------------
-# Install repo packages (CONTINUE ON FAILURE)
-# --------------------------------------------------
-echo -e "${C}== Installing packages ==${NC}"
-
+# --- 2. Package Installation ---
+step "Installing Packages"
 FAILED_PKGS=()
 
 for file in pkgs/*.txt; do
-  echo -e "${C}-- $file${NC}"
-  while read -r pkg; do
-    [[ -z "$pkg" || "$pkg" == \#* ]] && continue
-    echo -n "→ $pkg... "
-    if sudo pacman -S --needed --noconfirm "$pkg" >/dev/null 2>&1; then
-        echo -e "${G}OK${NC}"
-    else
-        echo -e "${R}FAIL${NC}"
-        FAILED_PKGS+=("$pkg")
-    fi
-  done < "$file"
+    echo -e "   ${DIM}→ Reading $file${RESET}"
+    while read -r pkg; do
+        [[ -z "$pkg" || "$pkg" == \#* ]] && continue
+        
+        if sudo pacman -S --needed --noconfirm "$pkg" &> /dev/null; then
+            # Silent Success
+            :
+        else
+            warn "Failed to install: $pkg"
+            FAILED_PKGS+=("$pkg")
+        fi
+    done < "$file"
 done
+success "Core packages installed"
 
-# --------------------------------------------------
-# Enable NetworkManager
-# --------------------------------------------------
-sudo systemctl enable --now NetworkManager >/dev/null 2>&1 || true
+# --- 3. Services ---
+step "Enabling Services"
+sudo systemctl enable --now NetworkManager &> /dev/null || true
+sudo systemctl enable --now bluetooth &> /dev/null || true
+sudo systemctl enable --now avahi-daemon &> /dev/null || true
+success "Services active (Network, Bluetooth, Avahi)"
 
-# --------------------------------------------------
-# Enable Bluetooth & Avahi
-# --------------------------------------------------
-sudo systemctl enable --now bluetooth >/dev/null 2>&1 || true
-sudo systemctl enable --now avahi-daemon >/dev/null 2>&1 || true
+# --- 4. FetchX ---
+step "Installing FetchX"
+if curl -fsSL https://raw.githubusercontent.com/v9mirza/fetchx/main/install.sh | bash &> /dev/null; then
+    success "FetchX Installed"
+else
+    warn "FetchX installation failed"
+fi
 
-# --------------------------------------------------
-# Install FetchX
-# --------------------------------------------------
-echo -e "${C}== Installing FetchX ==${NC}"
-curl -fsSL https://raw.githubusercontent.com/v9mirza/fetchx/main/install.sh | bash
+# --- 5. Configuration ---
+step "Deploying Configs"
 
-# --------------------------------------------------
-# Configs
-# --------------------------------------------------
-echo -e "${C}== Installing configs ==${NC}"
-
-# Required: Hypr entry point
-[[ -f config/hypr/hyprland.conf ]] || {
-  echo -e "${R}❌ Missing config/hypr/hyprland.conf${NC}"
-  exit 1
-}
+if [[ ! -f config/hypr/hyprland.conf ]]; then
+    error "Missing config/hypr/hyprland.conf"
+    exit 1
+fi
 
 mkdir -p ~/.config
 
-# Backup existing configs
+# Backup
 for d in hypr waybar dunst kitty wofi cava btop; do
-  if [[ -d ~/.config/$d ]]; then
-      echo "Backing up ~/.config/$d"
-      mv ~/.config/$d ~/.config/$d.bak
-  fi
+    if [[ -d ~/.config/$d ]]; then
+        mv ~/.config/$d ~/.config/$d.bak
+        echo -e "   ${DIM}→ Backed up $d${RESET}"
+    fi
 done
 
-# Copy configs exactly
-rsync -av --delete config/ ~/.config/
+# Copy
+rsync -av --delete config/ ~/.config/ &> /dev/null
 cp config/mimeapps.list ~/.config/mimeapps.list
-
-# Make scripts executable
 chmod +x ~/.config/hypr/scripts/*.sh 2>/dev/null || true
+success "Configs deployed to ~/.config"
 
-# --------------------------------------------------
-# Safety: block autogenerated Hypr config
-# --------------------------------------------------
-if grep -q "autogenerated = 1" ~/.config/hypr/hyprland.conf; then
-  echo -e "${R}❌ Autogenerated Hypr config detected${NC}"
-  exit 1
+# --- 6. GTK & Shell ---
+step "Finalizing Setup"
+
+# Hyprland Entry
+if ! command -v Hyprland &> /dev/null; then
+    sudo pacman -S --noconfirm hyprland &> /dev/null
 fi
 
-# --------------------------------------------------
-# Ensure Hyprland exists
-# --------------------------------------------------
-command -v Hyprland >/dev/null || sudo pacman -S --noconfirm hyprland
-
-# --------------------------------------------------
-# Wayland session entry
-# --------------------------------------------------
 sudo mkdir -p /usr/share/wayland-sessions
 sudo tee /usr/share/wayland-sessions/hyprland.desktop >/dev/null <<EOF
 [Desktop Entry]
@@ -141,20 +153,13 @@ Exec=Hyprland
 Type=Application
 EOF
 
-# --------------------------------------------------
-# Shell Setup (Starship)
-# --------------------------------------------------
+# Starship
 if ! grep -q "starship init bash" ~/.bashrc; then
-  echo -e "${C}== Configuring Shell ==${NC}"
-  echo 'eval "$(starship init bash)"' >> ~/.bashrc
-  echo -e "${G}→ Added Starship to ~/.bashrc${NC}"
-
+    echo 'eval "$(starship init bash)"' >> ~/.bashrc
+    success "Starship added to .bashrc"
 fi
 
-# --------------------------------------------------
-# GTK Theme Setup (No-Look)
-# --------------------------------------------------
-echo -e "${C}== Configuring GTK Theme ==${NC}"
+# GTK Theme
 mkdir -p ~/.config/gtk-3.0
 cat > ~/.config/gtk-3.0/settings.ini <<EOF
 [Settings]
@@ -164,9 +169,8 @@ gtk-font-name=Sans 11
 gtk-cursor-theme-name=Bibata-Modern-Ice
 gtk-application-prefer-dark-theme=1
 EOF
-echo -e "${G}→ Applied Papirus-Dark Icons & Dark Theme${NC}"
 
-# GTK2 Legacy Support
+# GTK2 Legacy
 cat > ~/.gtkrc-2.0 <<EOF
 gtk-theme-name="Adwaita-dark"
 gtk-icon-theme-name="Papirus-Dark"
@@ -184,15 +188,12 @@ gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
 gtk-xft-rgba="rgb"
 EOF
-echo -e "${G}→ Generated ~/.gtkrc-2.0${NC}"
 
-# --------------------------------------------------
 # Font Cache
-# --------------------------------------------------
-echo -e "${C}== Updating Font Cache ==${NC}"
-fc-cache -fv >/dev/null 2>&1 || true
-echo -e "${G}→ Fonts updated${NC}"
+fc-cache -fv &> /dev/null
+success "Themes & Fonts applied"
 
+# FetchX Auto-run
 if ! grep -q "fetchx" ~/.bashrc; then
   cat <<EOF >> ~/.bashrc
 
@@ -201,22 +202,18 @@ if command -v fetchx >/dev/null; then
   fetchx
 fi
 EOF
-  echo -e "${G}→ Added FetchX to ~/.bashrc startup${NC}"
 fi
 
-# --------------------------------------------------
-# Summary
-# --------------------------------------------------
+# --- Summary ---
 echo
-echo -e "${G}✅ Bootstrap complete${NC}"
-
+echo -e "${G}${BOLD}Installation Complete!${RESET}"
 if (( ${#FAILED_PKGS[@]} )); then
-  echo
-  echo -e "${R}⚠ Packages that failed to install:${NC}"
-  printf '  - %s\n' "${FAILED_PKGS[@]}"
+    echo
+    warn "Some packages failed to install:"
+    printf '  - %s\n' "${FAILED_PKGS[@]}"
 fi
-
 echo
-echo "Login:"
-echo "  - Display Manager → select Hyprland"
-echo "  - TTY → run: Hyprland"
+echo -e "  To start your session:"
+echo -e "  ${C}1.${RESET} Reboot your system"
+echo -e "  ${C}2.${RESET} Select 'Hyprland' at login"
+echo
