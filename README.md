@@ -68,7 +68,7 @@ chmod +x bootstrap.sh
 | Action | Keybinding |
 | :--- | :--- |
 | **Terminal** | `Super` + `Enter` |
-| **App Launcher** | `Super` + `D` |
+| **App Launcher** | `Super` + `Space` |
 | **File Manager** | `Super` + `E` |
 | **System Monitor** | `Super` + `M` |
 | **Power Menu** | `Super` + `X` |
