@@ -13,6 +13,7 @@ G='\033[0;32m'
 B='\033[0;34m'
 C='\033[0;36m'
 W='\033[1;37m'
+LOG="/tmp/v9-bootstrap.log"
 
 # --- Helpers ---
 print_banner() {
@@ -29,12 +30,12 @@ print_banner() {
 EOF
     echo -e "${RESET}"
     echo -e "${DIM}----------------------------------------------------------------${RESET}"
-    echo -e "${C} :: v9-hyprdots Bootstrap :: ${DIM}v2.0${RESET}"
+    echo -e "${C} :: v9-hyprdots Bootstrap :: ${DIM}v2.1${RESET}"
     echo
 }
 
 step() {
-    echo -e "${B}::${RESET} ${W}$1${RESET}..."
+    echo -e "${B}::${RESET} ${W}$1${RESET}"
 }
 
 success() {
@@ -49,12 +50,57 @@ warn() {
     echo -e "   ${C}‼${RESET} $1"
 }
 
+# $1 = Message, $2.. = Command
+run_with_spinner() {
+    local msg="$1"
+    shift
+    
+    echo -n -e "   ${DIM}→${RESET} $msg... "
+    
+    # Run command in background
+    "$@" &> "$LOG" &
+    local pid=$!
+    
+    local delay=0.1
+    local spinstr='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
+    
+    while kill -0 $pid 2>/dev/null; do
+        local temp=${spinstr#?}
+        printf "[%c]" "$spinstr"
+        local spinstr=$temp${spinstr%"$temp"}
+        sleep $delay
+        printf "\b\b\b"
+    done
+    
+    wait $pid
+    local exit_code=$?
+    
+    if [ $exit_code -eq 0 ]; then
+        echo -e "${G}Done${RESET}"
+    else
+        echo -e "${R}Fail${RESET}"
+        return $exit_code
+    fi
+}
+
 # --- Checks ---
 print_banner
 
 # Root Check
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
+
+# Sudo Refresh
+step "Authenticating"
+if sudo -v; then
+    success "Sudo privileges active"
+else
+    error "Sudo failed"
+    exit 1
+fi
+
+# Keep Sudo Alive
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Arch Check
 if [[ ! -f /etc/arch-release ]]; then
@@ -70,45 +116,43 @@ fi
 
 # --- 1. System Update ---
 step "Updating System"
-sudo pacman -S --noconfirm archlinux-keyring &> /dev/null
-if sudo pacman -Syu --noconfirm &> /dev/null; then
+if run_with_spinner "Syncing Repos & Updating" sudo pacman -Syu --noconfirm; then
     success "System Updated"
 else
-    error "Update Failed"
+    error "Update Failed (Check $LOG)"
     exit 1
 fi
 
 # --- 2. Package Installation ---
 step "Installing Packages"
+sudo pacman -S --noconfirm archlinux-keyring &> /dev/null
+
 FAILED_PKGS=()
 
 for file in pkgs/*.txt; do
-    echo -e "   ${DIM}→ Reading $file${RESET}"
+    echo -e "   ${B}::${RESET} Reading ${W}$(basename "$file")${RESET}"
     while read -r pkg; do
         [[ -z "$pkg" || "$pkg" == \#* ]] && continue
         
-        if sudo pacman -S --needed --noconfirm "$pkg" &> /dev/null; then
-            # Silent Success
+        if run_with_spinner "Installing $pkg" sudo pacman -S --needed --noconfirm "$pkg"; then
             :
         else
-            warn "Failed to install: $pkg"
             FAILED_PKGS+=("$pkg")
         fi
     done < "$file"
 done
-success "Core packages installed"
 
 # --- 3. Services ---
 step "Enabling Services"
-sudo systemctl enable --now NetworkManager &> /dev/null || true
-sudo systemctl enable --now bluetooth &> /dev/null || true
-sudo systemctl enable --now avahi-daemon &> /dev/null || true
-success "Services active (Network, Bluetooth, Avahi)"
+run_with_spinner "NetworkManager" sudo systemctl enable --now NetworkManager
+run_with_spinner "Bluetooth" sudo systemctl enable --now bluetooth
+run_with_spinner "Avahi" sudo systemctl enable --now avahi-daemon
+success "Services verified"
 
 # --- 4. FetchX ---
 step "Installing FetchX"
-if curl -fsSL https://raw.githubusercontent.com/v9mirza/fetchx/main/install.sh | bash &> /dev/null; then
-    success "FetchX Installed"
+if run_with_spinner "Downloading & Installing" bash -c "curl -fsSL https://raw.githubusercontent.com/v9mirza/fetchx/main/install.sh | bash"; then
+    success "FetchX Ready"
 else
     warn "FetchX installation failed"
 fi
@@ -132,17 +176,19 @@ for d in hypr waybar dunst kitty wofi cava btop; do
 done
 
 # Copy
-rsync -av --delete config/ ~/.config/ &> /dev/null
+if run_with_spinner "Syncing Dotfiles" rsync -av --delete config/ ~/.config/; then
+    success "Dotfiles applied"
+fi
+
 cp config/mimeapps.list ~/.config/mimeapps.list
 chmod +x ~/.config/hypr/scripts/*.sh 2>/dev/null || true
-success "Configs deployed to ~/.config"
 
 # --- 6. GTK & Shell ---
 step "Finalizing Setup"
 
 # Hyprland Entry
 if ! command -v Hyprland &> /dev/null; then
-    sudo pacman -S --noconfirm hyprland &> /dev/null
+    run_with_spinner "Installing Hyprland" sudo pacman -S --noconfirm hyprland
 fi
 
 sudo mkdir -p /usr/share/wayland-sessions
@@ -170,28 +216,8 @@ gtk-cursor-theme-name=Bibata-Modern-Ice
 gtk-application-prefer-dark-theme=1
 EOF
 
-# GTK2 Legacy
-cat > ~/.gtkrc-2.0 <<EOF
-gtk-theme-name="Adwaita-dark"
-gtk-icon-theme-name="Papirus-Dark"
-gtk-font-name="Sans 11"
-gtk-cursor-theme-name="Bibata-Modern-Ice"
-gtk-cursor-theme-size=24
-gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
-gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=1
-gtk-menu-images=1
-gtk-enable-event-sounds=1
-gtk-enable-input-feedback-sounds=1
-gtk-xft-antialias=1
-gtk-xft-hinting=1
-gtk-xft-hintstyle="hintfull"
-gtk-xft-rgba="rgb"
-EOF
-
 # Font Cache
-fc-cache -fv &> /dev/null
-success "Themes & Fonts applied"
+run_with_spinner "Updating Font Cache" fc-cache -fv
 
 # FetchX Auto-run
 if ! grep -q "fetchx" ~/.bashrc; then
