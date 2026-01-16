@@ -1,4 +1,6 @@
 # V9-hyprdots
+![Made with Arch](https://img.shields.io/badge/Made%20with-Arch-1793d1?style=for-the-badge&logo=arch-linux&logoColor=white)
+![Style](https://img.shields.io/badge/Style-Charcoal%20Monochrome-6f7a80?style=for-the-badge)
 
 A minimal, monochrome configuration for Hyprland.
 Designed for focus with a "Blur the shell, not the work" philosophy.
