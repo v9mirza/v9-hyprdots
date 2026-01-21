@@ -1,18 +1,20 @@
 # V9-hyprdots
 ![Made with Arch](https://img.shields.io/badge/Made%20with-Arch-1793d1?style=for-the-badge&logo=arch-linux&logoColor=white)
+![Window Manager](https://img.shields.io/badge/Window_Manager-Hyprland-2E3440?style=for-the-badge&logo=hyprland&logoColor=white)
 ![Style](https://img.shields.io/badge/Style-Modern%20Clean-6f7a80?style=for-the-badge)
 
-A highly optimized, modular configuration system for Hyprland.
-Designed for focus with a "Blur the shell, not the work" philosophy.
+> *"Blur the shell, not the work."*
+
+A highly optimized, modular configuration system for Hyprland on Arch Linux. Designed for focus, performance, and aesthetic perfection.
 
 ---
 
-## Presets
+## Presets & Installation
 
-Choose the setup that fits your persona.
+Choose the setup that fits your persona. Each preset is a self-contained configuration.
 
 ### 1. The Minimal Setup
-> *"Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away."*
+*Theme: Monochrome Dark | Focus: Productivity*
 
 A focused, distraction-free environment.
 *   **Palette**: Monochrome Dark (`#0f0f0f`)
@@ -20,14 +22,14 @@ A focused, distraction-free environment.
 *   **Best For**: Developers, writers, and minimalists.
 
 ```bash
-git clone https://github.com/v9mirza/v9-hyprdots.git
-cd v9-hyprdots/presets/minimal
+git clone https://github.com/v9mirza/v9-hyprdots.git ~/v9-hyprdots
+cd ~/v9-hyprdots/presets/minimal
 chmod +x install.sh
 ./install.sh
 ```
 
 ### 2. The Hypr-Knight
-> *"It's not who I am underneath, but what I do that defines me."*
+*Theme: Dark Knight / Gotham | Focus: Cinematic*
 
 A cinematic, intense aesthetic inspired by **The Dark Knight**.
 *   **Palette**: Deep Charcoal & Gotham Grey
@@ -35,71 +37,42 @@ A cinematic, intense aesthetic inspired by **The Dark Knight**.
 *   **Best For**: Night owls, creative professionals, and fans of the Bat.
 
 ```bash
-git clone https://github.com/v9mirza/v9-hyprdots.git
-cd v9-hyprdots/presets/hypr-knight
+git clone https://github.com/v9mirza/v9-hyprdots.git ~/v9-hyprdots
+cd ~/v9-hyprdots/presets/hypr-knight
 chmod +x install.sh
 ./install.sh
 ```
 
 ---
 
-## Highlights
-
-*   **Modular Presets**: Switch between styles easily without breaking your system.
-*   **Performance First**: Zero-bloat configs optimized for speed.
-*   **Pixel Perfect**: Every border, gap, and radius is calculated (Uniform 8px).
-*   **Ghostty Default**: GPU-accelerated terminal with custom V9 shaders.
-
-## Showcase
-
-| | |
-|:---:|:---:|
-| <img src="assets/home.png" width="100%"> | <img src="assets/terminal.png" width="100%"> |
-| Home Desktop | Terminal Workflow |
-| <img src="assets/app-menu.png" width="100%"> | <img src="assets/power-menu.png" width="100%"> |
-| App Launcher | Power Menu |
-
-## Tech Stack
+## Features & Tech Stack
 
 | Component | Tool | Description |
 | :--- | :--- | :--- |
-| Window Manager | Hyprland | Dwindle Layout, 4px Gaps |
-| Bar | Waybar | Floating, 85% Opacity, Blur |
-| Terminal | Ghostty | V9-hyprdots Config, 0.94 Opacity |
-| Launcher | Wofi | Blur, Cool Gray Selection |
-| Notification | Dunst | Dark Blur, Gray Border |
-| Lock Screen | Hyprlock | Minimalist Void |
+| **Window Manager** | Hyprland | Dwindle Layout, 4px Gaps, 8px Radius |
+| **Status Bar** | Waybar | Floating, 85% Opacity, Blur Effect |
+| **Terminal** | Ghostty | GPU-accelerated, V9 shaders, 0.94 Opacity |
+| **App Launcher** | Wofi | Blur, Cool Gray Selection |
+| **Notifications** | Dunst | Dark Blur, Gray Border |
+| **Lock Screen** | Hyprlock | Minimalist Void |
 
-## Project Structure
+*   **Modular Presets**: Switch between styles easily without breaking your system.
+*   **Performance First**: Zero-bloat configs optimized for speed.
+*   **Pixel Perfect**: Every border, gap, and radius is calculated.
 
-```plaintext
-v9-hyprdots/
-├── presets/
-│   ├── minimal/       # Minimalist Setup
-│   │   ├── install.sh
-│   │   ├── config/
-│   │   └── pkgs/
-│   │
-│   └── hypr-knight/   # Dark Knight Theme
-│       ├── install.sh
-│       ├── config/
-│       └── pkgs/
-```
-
-## Controls
+## Keybindings
 
 | Action | Keybinding |
 | :--- | :--- |
-| Terminal | `Super` + `Enter` |
-| App Launcher | `Super` + `Space` |
-| File Manager | `Super` + `E` |
-| System Monitor | `Super` + `M` |
-| Power Menu | `Super` + `X` |
-| Close Window | `Super` + `Q` |
-| Float Window | `Super` + `F` |
-| Clipboard | `Super` + `V` |
-| Screenshot (Full) | `Print` |
-| Lock Screen | `Super` + `L` |
+| **Terminal** | `Super` + `Enter` |
+| **App Launcher** | `Super` + `Space` |
+| **File Manager** | `Super` + `E` |
+| **System Monitor** | `Super` + `M` |
+| **Power Menu** | `Super` + `X` |
+| **Close Window** | `Super` + `Q` |
+| **Float Window** | `Super` + `F` |
+| **Lock Screen** | `Super` + `L` |
+| **Screenshot** | `Print` |
 
 ---
 V9-hyprdots by v9mirza.
