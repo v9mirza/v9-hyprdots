@@ -1,11 +1,11 @@
 /* 
  * V9-hyprdots - Waybar
- * Accent: GOLD (Signal Gold #c7a008)
+ * Accent: COLD STEEL (Blue-Grey #788496)
  */
 
 * {
     border: none;
-    border-radius: 8px;
+    border-radius: 0px;
     font-family: "JetBrains Mono Nerd Font";
     font-weight: bold;
     font-size: 14px;
@@ -13,7 +13,7 @@
 }
 
 window#waybar {
-    background: rgba(5, 5, 5, 0.96);
+    background: #000000;
     color: #dcdcdc;
     padding: 0 10px;
 }
@@ -28,16 +28,16 @@ window#waybar {
     padding: 0px 8px;
     margin: 0px 2px;
     border-radius: 0px;
-    /* Radius Rule: 8px UI */
-    color: #8a8a8a;
-    /* Muted */
+    /* Radius Rule: 0px UI */
+    color: #788496;
+    /* Muted Steel */
     background: transparent;
     transition: all 0.2s ease;
 }
 
 #workspaces button.active {
-    background-color: #c7a008;
-    /* V9 Accent */
+    background-color: #333333;
+    /* Graphite */
     color: #ffffff;
     min-width: 40px;
 }

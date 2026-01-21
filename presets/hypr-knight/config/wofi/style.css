@@ -8,18 +8,18 @@
 
 window {
     margin: 0px;
-    border: 2px solid #c7a008;
+    border: 2px solid #788496;
     /* Accent Border */
-    background-color: rgba(36, 36, 36, 0.94);
-    /* Transparent */
-    border-radius: 8px;
+    background-color: #000000;
+    /* Pure Black */
+    border-radius: 0px;
 }
 
 #input {
     margin: 10px;
-    border: 1px solid #242424;
+    border: 1px solid #333333;
     /* Graphite Border */
-    border-radius: 10px;
+    border-radius: 0px;
     background-color: #1a1a1a;
     color: #dcdcdc;
     padding: 12px;
@@ -42,8 +42,8 @@ window {
 }
 
 #entry:selected {
-    background-color: #c7a008;
-    /* V9 Accent */
+    background-color: #788496;
+    /* Cold Steel */
     color: #ffffff;
 }
 
