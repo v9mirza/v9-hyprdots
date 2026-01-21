@@ -17,8 +17,8 @@
         "idle_inhibitor",
         "cpu",
         "memory",
-        "backlight",
-        "pulseaudio",
+        "group/light",
+        "group/audio",
         "tray",
         "battery",
         "custom/power"
@@ -144,5 +144,35 @@
             "paused": "⏸"
         },
         "max-length": 30
+    },
+    "group/audio": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio#percent"
+        ]
+    },
+    "pulseaudio#percent": {
+        "format": "{volume}%"
+    },
+    "group/light": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "backlight",
+            "backlight#percent"
+        ]
+    },
+    "backlight#percent": {
+        "format": "{percent}%"
     }
 }
