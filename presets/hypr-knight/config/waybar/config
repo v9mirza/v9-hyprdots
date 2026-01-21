@@ -34,7 +34,7 @@
     },
     "clock": {
         "interval": 1,
-        "format": "{:%I:%M %p}",
+        "format": "{:%a %d %b %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
     },
     "idle_inhibitor": {
