@@ -1,6 +1,6 @@
 /* 
  * V9-hyprdots - Waybar
- * Accent: CHARCOAL (Muted Cool Gray #6f7a80)
+ * Accent: GOLD (Signal Gold #c7a008)
  */
 
 * {
@@ -13,7 +13,7 @@
 }
 
 window#waybar {
-    background: rgba(26, 26, 26, 0.95);
+    background: rgba(5, 5, 5, 0.96);
     color: #dcdcdc;
     padding: 0 10px;
 }
@@ -36,7 +36,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: #6f7a80;
+    background-color: #c7a008;
     /* V9 Accent */
     color: #ffffff;
     min-width: 40px;

@@ -23,7 +23,7 @@ window-theme = ghostty
 # --- Cursor (Tactical Block) ---
 cursor-style = block
 cursor-style-blink = false
-cursor-color = #6f7a80
+cursor-color = #c7a008
 cursor-text = #ffffff
 
 # --- Mouse & Selection ---
@@ -38,10 +38,10 @@ confirm-close-surface = false
 clipboard-write = allow
 
 # --- Colors (V9 Exact) ---
-background = #0f0f0f
-foreground = #d6d6d6
-selection-background = #6f7a80
-selection-foreground = #ffffff
+background = #050505
+foreground = #dcdcdc
+selection-background = #c7a008
+selection-foreground = #050505
 
 # Black
 palette = 0=#1a1a1a
