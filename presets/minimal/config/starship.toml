@@ -1,0 +1,44 @@
+# Starship Prompt
+# V9 – Tactical Monochrome
+# Optimized for Hyprland + Bash/Zsh
+
+add_newline = false
+
+format = "$username$hostname$directory$git_branch$git_status$cmd_duration$character"
+
+# ── Prompt Character ──────────────────────────────────────────────
+[character]
+success_symbol = "[❯](bold white)"
+error_symbol   = "[❯](bold red)"
+
+# ── Directory ─────────────────────────────────────────────────────
+[directory]
+style = "bold #6f7a80"
+truncation_length = 3
+truncate_to_repo = false
+
+# ── Git ───────────────────────────────────────────────────────────
+[git_branch]
+symbol = " "
+style = "bold #777777"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold red"
+format = "[$modified$untracked$ahead_behind]($style) "
+
+# ── Command Duration ──────────────────────────────────────────────
+[cmd_duration]
+min_time = 1500
+style = "bold #333333"
+format = "took [$duration]($style) "
+
+# ── Identity (only when it matters) ───────────────────────────────
+[username]
+show_always = false
+style_user = "bold #777777"
+style_root = "bold red"
+
+[hostname]
+ssh_only = true
+style = "bold #777777"

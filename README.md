@@ -1,25 +1,54 @@
 # V9-hyprdots
 ![Made with Arch](https://img.shields.io/badge/Made%20with-Arch-1793d1?style=for-the-badge&logo=arch-linux&logoColor=white)
-![Style](https://img.shields.io/badge/Style-Charcoal%20Monochrome-6f7a80?style=for-the-badge)
+![Style](https://img.shields.io/badge/Style-Modern%20Clean-6f7a80?style=for-the-badge)
 
-A minimal, monochrome configuration for Hyprland.
+A highly optimized, modular configuration system for Hyprland.
 Designed for focus with a "Blur the shell, not the work" philosophy.
 
 ---
 
-## Identity
+## Presets
 
+Choose the setup that fits your persona.
+
+### 1. The Minimal Setup
+> *"Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away."*
+
+A focused, distraction-free environment.
 *   **Palette**: Monochrome Dark (`#0f0f0f`)
-*   **Accent**: Cool Gray (`#6f7a80`)
-*   **Radius**: Uniform 8px
-*   **Blur**: Enabled on Shell (Waybar, Wofi, Dunst)
+*   **Goal**: Pure productivity. Zero visual clutter.
+*   **Best For**: Developers, writers, and minimalists.
+
+```bash
+git clone https://github.com/v9mirza/v9-hyprdots.git
+cd v9-hyprdots/presets/minimal
+chmod +x install.sh
+./install.sh
+```
+
+### 2. The Hypr-Knight
+> *"It's not who I am underneath, but what I do that defines me."*
+
+A cinematic, intense aesthetic inspired by **The Dark Knight**.
+*   **Palette**: Deep Charcoal & Gotham Grey
+*   **Goal**: A moody, powerful desktop experience.
+*   **Best For**: Night owls, creative professionals, and fans of the Bat.
+
+```bash
+git clone https://github.com/v9mirza/v9-hyprdots.git
+cd v9-hyprdots/presets/hypr-knight
+chmod +x install.sh
+./install.sh
+```
+
+---
 
 ## Highlights
 
-*   **Performance First**: Zero-bloat config optimized for speed.
-*   **Pixel Perfect**: Every border, gap, and radius is calculated.
-*   **Charcoal Accent**: A unified accent color `#6f7a80` across all apps.
-*   **Ghostty Default**: GPU-accelerated terminal with V9 shaders.
+*   **Modular Presets**: Switch between styles easily without breaking your system.
+*   **Performance First**: Zero-bloat configs optimized for speed.
+*   **Pixel Perfect**: Every border, gap, and radius is calculated (Uniform 8px).
+*   **Ghostty Default**: GPU-accelerated terminal with custom V9 shaders.
 
 ## Showcase
 
@@ -45,21 +74,16 @@ Designed for focus with a "Blur the shell, not the work" philosophy.
 
 ```plaintext
 v9-hyprdots/
-├── bootstrap.sh       # Installer (V9 Edition)
-├── config/
-│   ├── hypr/          # Core Configs
-│   ├── waybar/        # CSS with 8px radius
-│   ├── ghostty/       # V9-hyprdots Terminal
-│   └── wofi/          # Blur enabled
-```
-
-## Installation
-
-```bash
-git clone https://github.com/v9mirza/v9-hyprdots.git
-cd v9-hyprdots
-chmod +x bootstrap.sh
-./bootstrap.sh
+├── presets/
+│   ├── minimal/       # Minimalist Setup
+│   │   ├── install.sh
+│   │   ├── config/
+│   │   └── pkgs/
+│   │
+│   └── hypr-knight/   # Dark Knight Theme
+│       ├── install.sh
+│       ├── config/
+│       └── pkgs/
 ```
 
 ## Controls

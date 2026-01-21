@@ -1,0 +1,69 @@
+# Ghostty Config - V9-hyprdots Edition
+# "Tactical, Fast, Semi-Transparent"
+
+# --- Typography ---
+font-family = "JetBrains Mono Nerd Font"
+font-size = 13
+font-feature = "-calt"
+font-feature = "-liga"
+font-feature = "-dlig"
+# A slight line height increase helps readability
+adjust-cell-height = 10%
+
+# --- Window & Transparency ---
+window-decoration = false
+window-padding-x = 12
+window-padding-y = 12
+window-padding-balance = true
+# 90% opacity for the "Void" look
+background-opacity = 0.94
+# Allow Blur from Hyprland
+window-theme = ghostty
+
+# --- Cursor (Tactical Block) ---
+cursor-style = block
+cursor-style-blink = false
+cursor-color = #6f7a80
+cursor-text = #ffffff
+
+# --- Mouse & Selection ---
+mouse-hide-while-typing = true
+copy-on-select = true
+# Click to open links
+link-url = true
+
+# --- Setup ---
+shell-integration = zsh
+confirm-close-surface = false
+clipboard-write = allow
+
+# --- Colors (V9 Exact) ---
+background = #0f0f0f
+foreground = #d6d6d6
+selection-background = #6f7a80
+selection-foreground = #ffffff
+
+# Black
+palette = 0=#1a1a1a
+palette = 8=#2a2a2a
+# Red
+palette = 1=#cc6666
+palette = 9=#cc6666
+# Green
+palette = 2=#88aa77
+palette = 10=#88aa77
+# Yellow
+palette = 3=#ddcc77
+palette = 11=#ddcc77
+# Blue (Accent)
+palette = 4=#6f7a80
+palette = 12=#6f7a80
+# Magenta
+palette = 5=#aa88aa
+palette = 13=#aa88aa
+# Cyan
+palette = 6=#77aaaa
+palette = 14=#77aaaa
+# White
+palette = 7=#d6d6d6
+palette = 15=#ffffff

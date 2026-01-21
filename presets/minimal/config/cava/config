@@ -1,0 +1,29 @@
+[general]
+framerate = 60
+autosens = 1
+overshoot = 20
+sensitivity = 100
+bars = 0
+bar_width = 2
+bar_spacing = 1
+bar_height = 32
+block_creature = 1
+
+[input]
+method = pulse
+source = auto
+
+[output]
+method = ncurses
+style = stereo
+
+[color]
+# Tactical Monochrome
+# White bars, Black background (transparent)
+background = '#000000'
+foreground = '#ffffff'
+
+gradient = 1
+gradient_count = 2
+gradient_color_1 = '#6f7a80'
+gradient_color_2 = '#d6d6d6'

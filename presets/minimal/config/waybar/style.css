@@ -1,0 +1,103 @@
+/* 
+ * V9-hyprdots - Waybar
+ * Accent: CHARCOAL (Muted Cool Gray #6f7a80)
+ */
+
+* {
+    border: none;
+    border-radius: 8px;
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(26, 26, 26, 0.95);
+    color: #dcdcdc;
+    padding: 0 10px;
+}
+
+/* WORKSPACES */
+#workspaces {
+    background: transparent;
+    margin: 4px;
+}
+
+#workspaces button {
+    padding: 0px 8px;
+    margin: 0px 2px;
+    border-radius: 0px;
+    /* Radius Rule: 8px UI */
+    color: #8a8a8a;
+    /* Muted */
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    background-color: #6f7a80;
+    /* V9 Accent */
+    color: #ffffff;
+    min-width: 40px;
+}
+
+#workspaces button:hover {
+    background-color: #9a9a9a;
+    color: #ffffff;
+}
+
+/* GROUPS & MODULES via common class */
+#clock,
+#mpris,
+#battery,
+#cpu,
+#memory,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#idle_inhibitor,
+#custom-power,
+#tray {
+    padding: 0 12px;
+    margin: 0;
+    color: #dcdcdc;
+    background: transparent;
+    border-radius: 6px;
+}
+
+/* ACCENTS */
+#clock {
+    color: #ffffff;
+}
+
+#battery.charging {
+    color: #6f7a80;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #6b2a2a;
+    color: #ffffff;
+    animation: blink 1s linear infinite;
+}
+
+#custom-power {
+    background-color: transparent;
+    color: #dcdcdc;
+}
+
+#custom-power:hover {
+    background-color: #6f7a80;
+    color: #ffffff;
+}
+
+#idle_inhibitor.activated {
+    background-color: #6f7a80;
+    color: #ffffff;
+}
+
+#mpris {
+    margin-left: 20px;
+    color: #d6d6d6;
+}

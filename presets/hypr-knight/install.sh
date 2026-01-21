@@ -30,7 +30,7 @@ print_banner() {
 EOF
     echo -e "${RESET}"
     echo -e "${DIM}----------------------------------------------------------------${RESET}"
-    echo -e "${C} :: v9-hyprdots Bootstrap :: ${DIM}v2.1${RESET}"
+    echo -e "${C} :: v9-hyprdots Hypr-Knight :: ${DIM}v2.1${RESET}"
     echo
 }
 

@@ -1,0 +1,9 @@
+git
+networkmanager
+network-manager-applet
+pipewire
+wireplumber
+xdg-utils
+xdg-user-dirs
+polkit-gnome
+rsync
