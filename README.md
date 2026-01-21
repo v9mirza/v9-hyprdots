@@ -22,8 +22,8 @@ A focused, distraction-free environment.
 *   **Best For**: Developers, writers, and minimalists.
 
 ```bash
-git clone https://github.com/v9mirza/v9-hyprdots.git ~/v9-hyprdots
-cd ~/v9-hyprdots/presets/minimal
+git clone https://github.com/v9mirza/v9-hyprdots.git
+cd v9-hyprdots/presets/minimal
 chmod +x install.sh
 ./install.sh
 ```
@@ -37,8 +37,8 @@ A cinematic, intense aesthetic inspired by **The Dark Knight**.
 *   **Best For**: Night owls, creative professionals, and fans of the Bat.
 
 ```bash
-git clone https://github.com/v9mirza/v9-hyprdots.git ~/v9-hyprdots
-cd ~/v9-hyprdots/presets/hypr-knight
+git clone https://github.com/v9mirza/v9-hyprdots.git
+cd v9-hyprdots/presets/hypr-knight
 chmod +x install.sh
 ./install.sh
 ```
